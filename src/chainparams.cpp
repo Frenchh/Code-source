@@ -133,7 +133,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1527379200;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 211635;
+        genesis.nNonce = 492305;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000ee1d29715a7ccf1ce7c17791037d73c495a4ee0b4feb0d4d01d96ccacbd"));
@@ -214,7 +214,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527379210;
-        genesis.nNonce = 817129;
+        genesis.nNonce = 26976;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000e9fcdf9ea33163b275795f0c9d8da4b5f57174bbb7d54ad0172c49aa35f"));
