@@ -1,0 +1,26 @@
+# /etc/conf.d/frenchd: config file for /etc/init.d/frenchd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/french/french.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/frenchd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/frenchd.pid"
+
+# Where to write frenchd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/frenchd"
+
+# User and group to own frenchd process
+#BITCOIND_USER="french"
+#BITCOIND_GROUP="french"
+
+# Path to frenchd executable
+#BITCOIND_BIN="/usr/bin/frenchd"
+
+# Nice value to run frenchd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

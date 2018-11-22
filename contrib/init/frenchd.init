@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  frenchd The French core server.
+#
+#
+# chkconfig: 345 80 20
+# description: frenchd
+# processname: frenchd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/frenchd, see below
+if [ -f /etc/sysconfig/frenchd ]; then
+        . /etc/sysconfig/frenchd
+fi
+
+RETVAL=0
+
+prog=frenchd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/frenchd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/frenchd}
+
+# frenchd defaults to /usr/bin/frenchd, override with BITCOIND_BIN
+bitcoind=${BITCOIND_BIN-/usr/bin/frenchd}
+
+# frenchd opts default to -disablewallet, override with BITCOIND_OPTS
+bitcoind_opts=${BITCOIND_OPTS}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $bitcoind $bitcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

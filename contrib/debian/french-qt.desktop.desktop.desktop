@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BitcoinGreen
+Comment=BitcoinGreen P2P Cryptocurrency
+Exec=french-qt %u
+Terminal=false
+Type=Application
+Icon=french128
+MimeType=x-scheme-handler/french;
+Categories=Office;Finance;
+Name[fr_FR]=french-qt.desktop.desktop
