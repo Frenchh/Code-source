@@ -1,13 +1,9 @@
 Building French
 
-Use the autogen script to prepare the build environment.
+Utilisez le script autogen pour préparer la construction de l'environnement.
 
     ./autogen.sh
     ./configure
     make
 
-Always verify the signatures and checksums.
-
-See doc/build-*.md for instructions on building frenchd,
-the intended-for-services, no-graphical-interface, reference
-implementation of French.
+Toujours vérifier les signatures et les sommes de contrôle.
