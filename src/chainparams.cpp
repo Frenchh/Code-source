@@ -80,7 +80,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     (0, uint256("0x1cf96a6c48a9020dfb8fa03d32bfe58d6927e2268bdf87982be66ba589108f44"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1542915020,
+    1527379220,
     0,
     100};
 
@@ -131,7 +131,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1527379200;
+        genesis.nTime = 1542915000;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 492305;
 
@@ -213,7 +213,7 @@ public:
         nMaxMoneyOut = 2000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1527379210;
+        genesis.nTime = 1542915010;
         genesis.nNonce = 26976;
 
         hashGenesisBlock = genesis.GetHash();
@@ -246,7 +246,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "0491fe8bb8da0d1a488cd14ce69d3b2b73552defd42fe2eca0704d5d00099f1793cbf46eb186ec714c7e964d9b8826d354345467d17e2fe814afaa50978a19ba40";
-        strMasternodePoolDummyAddress = "nQQ6cNVNg1R1A2e1AgtY1FPsh3d1wGekr7";
+        strMasternodePoolDummyAddress = "";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
