@@ -80,7 +80,7 @@ public:
     int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
     /** The masternode count that we will allow the see-saw reward payments to be off by */
-    int MasternodeCountDrift() const { return nMasternodeCountDrift; }
+    int FrenchnodeCountDrift() const { return nFrenchnodeCountDrift; }
     /** Make miner stop after a block is found. In RPC, don't return until nGenProcLimit blocks are generated */
     bool MineBlocksOnDemand() const { return fMineBlocksOnDemand; }
     /** In the future use NetworkIDString() for RPC fields */
@@ -93,8 +93,8 @@ public:
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
     int PoolMaxTransactions() const { return nPoolMaxTransactions; }
     std::string SporkKey() const { return strSporkKey; }
-    std::string MasternodePoolDummyAddress() const { return strMasternodePoolDummyAddress; }
-    int64_t StartMasternodePayments() const { return nStartMasternodePayments; }
+    std::string FrenchnodePoolDummyAddress() const { return strFrenchnodePoolDummyAddress; }
+    int64_t StartFrenchnodePayments() const { return nStartFrenchnodePayments; }
     int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
     CBaseChainParams::Network NetworkID() const { return networkID; }
 
@@ -115,7 +115,7 @@ protected:
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nLastPOWBlock;
-    int nMasternodeCountDrift;
+    int nFrenchnodeCountDrift;
     int nMaturity;
     int nModifierUpdateBlock;
     CAmount nMaxMoneyOut;
@@ -136,8 +136,8 @@ protected:
     bool fHeadersFirstSyncingActive;
     int nPoolMaxTransactions;
     std::string strSporkKey;
-    std::string strMasternodePoolDummyAddress;
-    int64_t nStartMasternodePayments;
+    std::string strFrenchnodePoolDummyAddress;
+    int64_t nStartFrenchnodePayments;
     int64_t nBudget_Fee_Confirmations;
 };
 

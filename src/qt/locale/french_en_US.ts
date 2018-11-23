@@ -610,8 +610,8 @@
         <translation>Request payments (generates QR codes and french: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -658,12 +658,12 @@
         <translation>Open Wallet &amp;Configuration File</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Open &amp;Masternode Configuration File</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Open &amp;Frenchnode Configuration File</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Open Masternode configuration file</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>Open Frenchnode configuration file</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -1264,14 +1264,14 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Form</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>My Masternodes</translation>
+        <source>My Frenchnodes</source>
+        <translation>My Frenchnodes</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
@@ -1463,8 +1463,8 @@ MultiSend will not be activated unless you have clicked Activate</translation>
         <translation>Send For Stakes</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Send For Masternode Rewards</translation>
+        <source>Send For Frenchnode Rewards</source>
+        <translation>Send For Frenchnode Rewards</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1603,8 +1603,8 @@ Please check the address and try again.</translation>
         <translation>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Show Masternodes Tab</translation>
+        <source>Show Frenchnodes Tab</source>
+        <translation>Show Frenchnodes Tab</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -2081,8 +2081,8 @@ Please check the address and try again.</translation>
         <translation>Open the French debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
-        <translation>Number of Masternodes</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Number of Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -3309,8 +3309,8 @@ Please check the address and try again.</translation>
         <translation>Received with</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode Reward</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnode Reward</translation>
     </message>
     <message>
         <source>Received from</source>
@@ -3424,8 +3424,8 @@ Please check the address and try again.</translation>
         <translation>Minted</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode Reward</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnode Reward</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3635,8 +3635,8 @@ Please check the address and try again.</translation>
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3903,8 +3903,8 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Block creation options:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Can't find random Masternode.</translation>
+        <source>Can't find random Frenchnode.</source>
+        <translation>Can't find random Frenchnode.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -4007,8 +4007,8 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Entries are full.</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Error connecting to Masternode.</translation>
+        <source>Error connecting to Frenchnode.</source>
+        <translation>Error connecting to Frenchnode.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -4307,16 +4307,16 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Maintain at most &lt;n&gt; connections to peers (default: %u)</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Masternode options:</translation>
+        <source>Frenchnode options:</source>
+        <translation>Frenchnode options:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode queue is full.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>Frenchnode queue is full.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation>Frenchnode:</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4335,12 +4335,12 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Need to specify a port with -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>No Masternodes detected.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation>No Frenchnodes detected.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
-        <translation>No compatible Masternode found.</translation>
+        <source>No compatible Frenchnode found.</source>
+        <translation>No compatible Frenchnode found.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -4359,8 +4359,8 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Not enough file descriptors available.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Not in the Masternode list.</translation>
+        <source>Not in the Frenchnode list.</source>
+        <translation>Not in the Frenchnode list.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -4611,8 +4611,8 @@ for example: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>This is intended for regression testing tools and app development.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>This is not a Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>This is not a Frenchnode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>

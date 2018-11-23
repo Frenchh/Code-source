@@ -602,8 +602,8 @@
         <translation>Vraag betaling aan (genereert QR-codes en french: URI's)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -650,12 +650,12 @@
         <translation>Open Portemonnee &amp;Configuratiebestand</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Open &amp;Masternode Configuratiebestand</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Open &amp;Frenchnode Configuratiebestand</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Open Masternode configuratiebestand</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>Open Frenchnode configuratiebestand</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -1128,14 +1128,14 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Mijn Masternodes</translation>
+        <source>My Frenchnodes</source>
+        <translation>Mijn Frenchnodes</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1599,8 +1599,8 @@ MultiSend: %1</translation>
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
-        <translation>Aantal Masternodes</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Aantal Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -2597,8 +2597,8 @@ MultiSend: %1</translation>
         <translation>Block creatie opties:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kan geen willekeurige Masternode vinden.</translation>
+        <source>Can't find random Frenchnode.</source>
+        <translation>Kan geen willekeurige Frenchnode vinden.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -2729,28 +2729,28 @@ MultiSend: %1</translation>
         <translation>Portemonnee aan het laden...</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Masternode opties:</translation>
+        <source>Frenchnode options:</source>
+        <translation>Frenchnode opties:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode wachtrij zit vol.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>Frenchnode wachtrij zit vol.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation>Frenchnode:</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Geen Masternodes gedetecteerd.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation>Geen Frenchnodes gedetecteerd.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
         <translation>Node relay opties:</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Niet in de Masternode lijst.</translation>
+        <source>Not in the Frenchnode list.</source>
+        <translation>Niet in de Frenchnode lijst.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -2785,8 +2785,8 @@ MultiSend: %1</translation>
         <translation>Dit is experimentele software.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dit is geen Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>Dit is geen Frenchnode.</translation>
     </message>
     <message>
         <source>Transaction fees are too high.</source>

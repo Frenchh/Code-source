@@ -75,8 +75,8 @@ void OptionsModel::Init()
 
 
 
-    if (!settings.contains("fShowMasternodesTab"))
-        settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
+    if (!settings.contains("fShowFrenchnodesTab"))
+        settings.setValue("fShowFrenchnodesTab", masternodeConfig.getCount());
 
     // These are shared with the core or have a command-line parameter
     // and we want command-line parameters to overwrite the GUI settings.
@@ -197,8 +197,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
 #ifdef ENABLE_WALLET
         case SpendZeroConfChange:
             return settings.value("bSpendZeroConfChange");
-        case ShowMasternodesTab:
-            return settings.value("fShowMasternodesTab");
+        case ShowFrenchnodesTab:
+            return settings.value("fShowFrenchnodesTab");
 #endif
         case StakeSplitThreshold:
             if (pwalletMain)
@@ -286,9 +286,9 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 setRestartRequired(true);
             }
             break;
-        case ShowMasternodesTab:
-            if (settings.value("fShowMasternodesTab") != value) {
-                settings.setValue("fShowMasternodesTab", value);
+        case ShowFrenchnodesTab:
+            if (settings.value("fShowFrenchnodesTab") != value) {
+                settings.setValue("fShowFrenchnodesTab", value);
                 setRestartRequired(true);
             }
             break;

@@ -821,7 +821,7 @@
     </message>
     <message>
         <location line="+15"/>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -881,12 +881,12 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1656,7 +1656,7 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <location filename="../forms/masternodelist.ui" line="+14"/>
         <source>Form</source>
@@ -1664,7 +1664,7 @@ Address: %4
     </message>
     <message>
         <location line="+18"/>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1900,7 +1900,7 @@ MultiSend will not be activated unless you have clicked Activate</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>Send For Masternode Rewards</source>
+        <source>Send For Frenchnode Rewards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2288,7 +2288,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2958,8 +2958,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-108"/>
-        <source>Number of Masternodes</source>
-        <translation>Number of Masternodes</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Number of Frenchnodes</translation>
     </message>
     <message>
         <location line="+122"/>
@@ -4586,7 +4586,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+2"/>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4730,7 +4730,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5308,8 +5308,8 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Can&apos;t find random Masternode.</source>
-        <translation type="unfinished">Can&apos;t find random Masternode.</translation>
+        <source>Can&apos;t find random Frenchnode.</source>
+        <translation type="unfinished">Can&apos;t find random Frenchnode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5458,8 +5458,8 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Error connecting to Masternode.</source>
-        <translation type="unfinished">Error connecting to Masternode.</translation>
+        <source>Error connecting to Frenchnode.</source>
+        <translation type="unfinished">Error connecting to Frenchnode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5745,7 +5745,7 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+38"/>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5900,18 +5900,18 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode options:</source>
-        <translation type="unfinished">Masternode options:</translation>
+        <source>Frenchnode options:</source>
+        <translation type="unfinished">Frenchnode options:</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode queue is full.</source>
-        <translation type="unfinished">Masternode queue is full.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation type="unfinished">Frenchnode queue is full.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode:</source>
-        <translation type="unfinished">Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation type="unfinished">Frenchnode:</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5935,13 +5935,13 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>No Masternodes detected.</source>
-        <translation type="unfinished">No Masternodes detected.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation type="unfinished">No Frenchnodes detected.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>No compatible Masternode found.</source>
-        <translation type="unfinished">No compatible Masternode found.</translation>
+        <source>No compatible Frenchnode found.</source>
+        <translation type="unfinished">No compatible Frenchnode found.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5965,8 +5965,8 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Not in the Masternode list.</source>
-        <translation type="unfinished">Not in the Masternode list.</translation>
+        <source>Not in the Frenchnode list.</source>
+        <translation type="unfinished">Not in the Frenchnode list.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6285,8 +6285,8 @@ for example: alertnotify=echo %%s | mail -s &quot;French Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>This is not a Masternode.</source>
-        <translation type="unfinished">This is not a Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation type="unfinished">This is not a Frenchnode.</translation>
     </message>
     <message>
         <location line="+1"/>

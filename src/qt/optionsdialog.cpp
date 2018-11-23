@@ -159,7 +159,7 @@ void OptionsDialog::setModel(OptionsModel* model)
     connect(ui->digits, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->lang, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->thirdPartyTxUrls, SIGNAL(textChanged(const QString&)), this, SLOT(showRestartWarning()));
-    connect(ui->showMasternodesTab, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+    connect(ui->showFrenchnodesTab, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
 }
 
 void OptionsDialog::setMapper()
@@ -194,8 +194,8 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->unit, OptionsModel::DisplayUnit);
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
 
-    /* Masternode Tab */
-    mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
+    /* Frenchnode Tab */
+    mapper->addMapping(ui->showFrenchnodesTab, OptionsModel::ShowFrenchnodesTab);
 }
 
 void OptionsDialog::enableOkButton()

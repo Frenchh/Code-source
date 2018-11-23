@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SRC_MASTERNODECONFIG_H_
-#define SRC_MASTERNODECONFIG_H_
+#ifndef SRC_FRENCHNODECONFIG_H_
+#define SRC_FRENCHNODECONFIG_H_
 
 #include <string>
 #include <vector>
@@ -12,14 +12,14 @@
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
 
-class CMasternodeConfig;
-extern CMasternodeConfig masternodeConfig;
+class CFrenchnodeConfig;
+extern CFrenchnodeConfig masternodeConfig;
 extern std::string strMasterNodePrivKey;
 
-class CMasternodeConfig
+class CFrenchnodeConfig
 {
 public:
-    class CMasternodeEntry
+    class CFrenchnodeEntry
     {
     private:
         std::string alias;
@@ -29,7 +29,7 @@ public:
         std::string outputIndex;
 
     public:
-        CMasternodeEntry(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex)
+        CFrenchnodeEntry(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex)
         {
             this->alias = alias;
             this->ip = ip;
@@ -91,16 +91,16 @@ public:
         }
     };
 
-    CMasternodeConfig()
+    CFrenchnodeConfig()
     {
-        entries = std::vector<CMasternodeEntry>();
+        entries = std::vector<CFrenchnodeEntry>();
     }
 
     void clear();
     bool read(std::string& strErr);
     void add(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex);
 
-    std::vector<CMasternodeEntry>& getEntries()
+    std::vector<CFrenchnodeEntry>& getEntries()
     {
         return entries;
     }
@@ -108,15 +108,15 @@ public:
     int getCount()
     {
         int c = -1;
-        BOOST_FOREACH (CMasternodeEntry e, entries) {
+        BOOST_FOREACH (CFrenchnodeEntry e, entries) {
             if (e.getAlias() != "") c++;
         }
         return c;
     }
 
 private:
-    std::vector<CMasternodeEntry> entries;
+    std::vector<CFrenchnodeEntry> entries;
 };
 
 
-#endif /* SRC_MASTERNODECONFIG_H_ */
+#endif /* SRC_FRENCHNODECONFIG_H_ */

@@ -106,7 +106,7 @@ std::string to_internal(const std::string&);
 using namespace std;
 
 // French only features
-// Masternode
+// Frenchnode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
 string strMasterNodeAddr = "";
@@ -115,7 +115,7 @@ bool fLiteMode = false;
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
 /** Spork enforcement enabled time */
-int64_t enforceMasternodePaymentsTime = 4085657524;
+int64_t enforceFrenchnodePaymentsTime = 4085657524;
 bool fSucessfullyLoaded = false;
 string strBudgetMode = "";
 
@@ -487,7 +487,7 @@ boost::filesystem::path GetConfigFile()
     return pathConfigFile;
 }
 
-boost::filesystem::path GetMasternodeConfigFile()
+boost::filesystem::path GetFrenchnodeConfigFile()
 {
     boost::filesystem::path pathConfigFile(GetArg("-mnconf", "masternode.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir() / pathConfigFile;

@@ -118,11 +118,11 @@ void WalletFrame::gotoHistoryPage()
         i.value()->gotoHistoryPage();
 }
 
-void WalletFrame::gotoMasternodePage() // Masternode list
+void WalletFrame::gotoFrenchnodePage() // Frenchnode list
 {
     QMap<QString, WalletView*>::const_iterator i;
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
-        i.value()->gotoMasternodePage();
+        i.value()->gotoFrenchnodePage();
 }
 
 void WalletFrame::gotoBlockExplorerPage()

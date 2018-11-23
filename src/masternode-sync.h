@@ -3,64 +3,64 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MASTERNODE_SYNC_H
-#define MASTERNODE_SYNC_H
+#ifndef FRENCHNODE_SYNC_H
+#define FRENCHNODE_SYNC_H
 
-#define MASTERNODE_SYNC_INITIAL 0
-#define MASTERNODE_SYNC_SPORKS 1
-#define MASTERNODE_SYNC_LIST 2
-#define MASTERNODE_SYNC_MNW 3
-#define MASTERNODE_SYNC_BUDGET 4
-#define MASTERNODE_SYNC_BUDGET_PROP 10
-#define MASTERNODE_SYNC_BUDGET_FIN 11
-#define MASTERNODE_SYNC_FAILED 998
-#define MASTERNODE_SYNC_FINISHED 999
+#define FRENCHNODE_SYNC_INITIAL 0
+#define FRENCHNODE_SYNC_SPORKS 1
+#define FRENCHNODE_SYNC_LIST 2
+#define FRENCHNODE_SYNC_MNW 3
+#define FRENCHNODE_SYNC_BUDGET 4
+#define FRENCHNODE_SYNC_BUDGET_PROP 10
+#define FRENCHNODE_SYNC_BUDGET_FIN 11
+#define FRENCHNODE_SYNC_FAILED 998
+#define FRENCHNODE_SYNC_FINISHED 999
 
-#define MASTERNODE_SYNC_TIMEOUT 5
-#define MASTERNODE_SYNC_THRESHOLD 2
+#define FRENCHNODE_SYNC_TIMEOUT 5
+#define FRENCHNODE_SYNC_THRESHOLD 2
 
-class CMasternodeSync;
-extern CMasternodeSync masternodeSync;
+class CFrenchnodeSync;
+extern CFrenchnodeSync masternodeSync;
 
 //
-// CMasternodeSync : Sync masternode assets in stages
+// CFrenchnodeSync : Sync masternode assets in stages
 //
 
-class CMasternodeSync
+class CFrenchnodeSync
 {
 public:
     std::map<uint256, int> mapSeenSyncMNB;
     std::map<uint256, int> mapSeenSyncMNW;
     std::map<uint256, int> mapSeenSyncBudget;
 
-    int64_t lastMasternodeList;
-    int64_t lastMasternodeWinner;
+    int64_t lastFrenchnodeList;
+    int64_t lastFrenchnodeWinner;
     int64_t lastBudgetItem;
     int64_t lastFailure;
     int nCountFailures;
 
     // sum of all counts
-    int sumMasternodeList;
-    int sumMasternodeWinner;
+    int sumFrenchnodeList;
+    int sumFrenchnodeWinner;
     int sumBudgetItemProp;
     int sumBudgetItemFin;
     // peers that reported counts
-    int countMasternodeList;
-    int countMasternodeWinner;
+    int countFrenchnodeList;
+    int countFrenchnodeWinner;
     int countBudgetItemProp;
     int countBudgetItemFin;
 
     // Count peers we've requested the list from
-    int RequestedMasternodeAssets;
-    int RequestedMasternodeAttempt;
+    int RequestedFrenchnodeAssets;
+    int RequestedFrenchnodeAttempt;
 
     // Time when current masternode asset sync started
     int64_t nAssetSyncStarted;
 
-    CMasternodeSync();
+    CFrenchnodeSync();
 
-    void AddedMasternodeList(uint256 hash);
-    void AddedMasternodeWinner(uint256 hash);
+    void AddedFrenchnodeList(uint256 hash);
+    void AddedFrenchnodeWinner(uint256 hash);
     void AddedBudgetItem(uint256 hash);
     void GetNextAsset();
     std::string GetSyncStatus();
@@ -72,7 +72,7 @@ public:
     void Process();
     bool IsSynced();
     bool IsBlockchainSynced();
-    bool IsMasternodeListSynced() { return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST; }
+    bool IsFrenchnodeListSynced() { return RequestedFrenchnodeAssets > FRENCHNODE_SYNC_LIST; }
     void ClearFulfilledRequest();
 };
 

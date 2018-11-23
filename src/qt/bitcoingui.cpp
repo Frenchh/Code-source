@@ -375,7 +375,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #ifdef ENABLE_WALLET
 
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         QPixmap masternodesIconInactive(":/icons/masternodes");
         QPixmap masternodesIconActive(":icons/masternodes_active");
         QIcon masternodesIcon(masternodesIconInactive);
@@ -385,7 +385,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
         masternodesIcon.addPixmap(masternodesIconActive,QIcon::Active,QIcon::On);
         masternodesIcon.addPixmap(masternodesIconActive,QIcon::Active,QIcon::Off);
 
-        masternodeAction = new QAction(masternodesIcon, tr("&Masternodes"), this);
+        masternodeAction = new QAction(masternodesIcon, tr("&Frenchnodes"), this);
         masternodeAction->setStatusTip(tr("Browse masternodes"));
         masternodeAction->setToolTip(masternodeAction->statusTip());
         masternodeAction->setCheckable(true);
@@ -396,7 +396,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
         tabGroup->addAction(masternodeAction);
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-        connect(masternodeAction, SIGNAL(triggered()), this, SLOT(gotoMasternodePage()));
+        connect(masternodeAction, SIGNAL(triggered()), this, SLOT(gotoFrenchnodePage()));
     }
 
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
@@ -463,8 +463,8 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     openRepairAction->setStatusTip(tr("Show wallet repair options"));
     openConfEditorAction = new QAction(QIcon(":/icons/edit"), tr("Open Wallet &Configuration File"), this);
     openConfEditorAction->setStatusTip(tr("Open configuration file"));
-    openMNConfEditorAction = new QAction(QIcon(":/icons/edit"), tr("Open &Masternode Configuration File"), this);
-    openMNConfEditorAction->setStatusTip(tr("Open Masternode configuration file"));
+    openMNConfEditorAction = new QAction(QIcon(":/icons/edit"), tr("Open &Frenchnode Configuration File"), this);
+    openMNConfEditorAction->setStatusTip(tr("Open Frenchnode configuration file"));
     showBackupsAction = new QAction(QIcon(":/icons/browse"), tr("Show Automatic &Backups"), this);
     showBackupsAction->setStatusTip(tr("Show automatically created wallet backups"));
 
@@ -589,7 +589,7 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(historyAction);
         toolbar->addAction(masternodeAction);
         QSettings settings;
-        if (settings.value("fShowMasternodesTab").toBool()) {
+        if (settings.value("fShowFrenchnodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
         }
         toolbar->setMovable(false); // remove unused icon in upper left corner
@@ -680,7 +680,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     historyAction->setEnabled(enabled);
     masternodeAction->setEnabled(enabled);
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         masternodeAction->setEnabled(enabled);
     }
     encryptWalletAction->setEnabled(enabled);
@@ -814,12 +814,12 @@ void BitcoinGUI::gotoHistoryPage()
     if (walletFrame) walletFrame->gotoHistoryPage();
 }
 
-void BitcoinGUI::gotoMasternodePage()
+void BitcoinGUI::gotoFrenchnodePage()
 {
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         masternodeAction->setChecked(true);
-        if (walletFrame) walletFrame->gotoMasternodePage();
+        if (walletFrame) walletFrame->gotoFrenchnodePage();
     }
 }
 
@@ -968,11 +968,11 @@ void BitcoinGUI::setNumBlocks(int count)
                 walletFrame->showOutOfSyncWarning(false);
 #endif // ENABLE_WALLET
 
-            nAttempt = masternodeSync.RequestedMasternodeAttempt < MASTERNODE_SYNC_THRESHOLD ?
-                           masternodeSync.RequestedMasternodeAttempt + 1 :
-                           MASTERNODE_SYNC_THRESHOLD;
-            progress = nAttempt + (masternodeSync.RequestedMasternodeAssets - 1) * MASTERNODE_SYNC_THRESHOLD;
-            progressBar->setMaximum(4 * MASTERNODE_SYNC_THRESHOLD);
+            nAttempt = masternodeSync.RequestedFrenchnodeAttempt < FRENCHNODE_SYNC_THRESHOLD ?
+                           masternodeSync.RequestedFrenchnodeAttempt + 1 :
+                           FRENCHNODE_SYNC_THRESHOLD;
+            progress = nAttempt + (masternodeSync.RequestedFrenchnodeAssets - 1) * FRENCHNODE_SYNC_THRESHOLD;
+            progressBar->setMaximum(4 * FRENCHNODE_SYNC_THRESHOLD);
             progressBar->setFormat(tr("Synchronizing additional data: %p%"));
             progressBar->setValue(progress);
         }

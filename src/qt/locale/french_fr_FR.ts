@@ -538,8 +538,8 @@
         <translation>Envoyer des pièces à une adresse FRENCH</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -912,7 +912,7 @@ Adresse : %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>Adresse</translation>
@@ -1115,7 +1115,7 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Version client</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Nombre de masternodes</translation>
     </message>
     <message>

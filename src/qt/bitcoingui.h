@@ -29,7 +29,7 @@ class SendCoinsRecipient;
 class UnitDisplayStatusBarControl;
 class WalletFrame;
 class WalletModel;
-class MasternodeList;
+class FrenchnodeList;
 
 class CWallet;
 
@@ -203,7 +203,7 @@ private slots:
     /** Switch to Explorer Page */
     void gotoBlockExplorerPage();
     /** Switch to masternode page */
-    void gotoMasternodePage();
+    void gotoFrenchnodePage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

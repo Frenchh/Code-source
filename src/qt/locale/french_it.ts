@@ -598,8 +598,8 @@
         <translation>Richiedi pagamenti (genera codici QR e french: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -916,10 +916,10 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
-        <source>My Masternodes</source>
-        <translation>I miei Masternodes</translation>
+        <source>My Frenchnodes</source>
+        <translation>I miei Frenchnodes</translation>
     </message>
     <message>
         <source>Address</source>

@@ -614,7 +614,7 @@
         <translation>&amp;Privacidad</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation>Nodos &amp;Maestros</translation>
     </message>
     <message>
@@ -662,11 +662,11 @@
         <translation>Abrir Fichero de &amp;Configuración del Monedero</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>Abrir Fichero de Configuración de Nodos &amp;Maestros</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>Abrir Fichero de Configuración de Nodos Maestros</translation>
     </message>
     <message>
@@ -1252,13 +1252,13 @@ MultiEnvío: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>Mis Nodos Maestros</translation>
     </message>
     <message>
@@ -1451,7 +1451,7 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
         <translation>Enviar Para Participaciones</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
+        <source>Send For Frenchnode Rewards</source>
         <translation>Enviar Para Recomensas De Nodos Maestros</translation>
     </message>
     <message>
@@ -1591,7 +1591,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Mostrar pestaña adicional listando todos sus nodos maestros en la primera sub-pestaña&lt;br/&gt;y todos los nodos maestros de la red en la segunda sub-pestaña.</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation>Mostrar la pestaña de Nodos Maestros</translation>
     </message>
     <message>
@@ -2061,7 +2061,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Abrir el fichero de depuración French en el directorio actual de datos. Esto puede llevar unos segundos para ficheros de depuración grandes.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Número de Nodos Maestros</translation>
     </message>
     <message>
@@ -3261,7 +3261,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Recibido con</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>Recompensa de Nodo Maestro</translation>
     </message>
     <message>
@@ -3376,7 +3376,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Creación de moneda</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>Recompensa de Nodo Maestro</translation>
     </message>
     <message>
@@ -3587,8 +3587,8 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica French (Masternodes, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica French (Frenchnodes, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3855,8 +3855,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Opciones de creación de bloque:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
-        <translation>No se puede encontrar un Masternode al azar.</translation>
+        <source>Can't find random Frenchnode.</source>
+        <translation>No se puede encontrar un Frenchnode al azar.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -3959,7 +3959,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Las entradas están llenas.</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
+        <source>Error connecting to Frenchnode.</source>
         <translation>Error al conectar al Nodo Maestro</translation>
     </message>
     <message>
@@ -4259,15 +4259,15 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Mantener como máximo &lt;n&gt; conexiones a pares (predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Opciones de Masternode:</translation>
+        <source>Frenchnode options:</source>
+        <translation>Opciones de Frenchnode:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
+        <source>Frenchnode queue is full.</source>
         <translation>La cola del Nodo Maestro esta llena.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
+        <source>Frenchnode:</source>
         <translation>Nodo maestro:</translation>
     </message>
     <message>
@@ -4287,12 +4287,12 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Necesita especificar un puerto con -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>No se han detectado Masternodes.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation>No se han detectado Frenchnodes.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
-        <translation>No hay un Masternode compatible encontrado.</translation>
+        <source>No compatible Frenchnode found.</source>
+        <translation>No hay un Frenchnode compatible encontrado.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -4311,8 +4311,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>No hay suficientes descriptores de archivo disponibles.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>No en la lista Masternode.</translation>
+        <source>Not in the Frenchnode list.</source>
+        <translation>No en la lista Frenchnode.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -4563,7 +4563,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "French Alert" admin@foo.com
         <translation>Esto esta destinado para herramientas de prueba de regresión y desarrollo de aplicaciones.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
+        <source>This is not a Frenchnode.</source>
         <translation>Este no es un nodo maestro.</translation>
     </message>
     <message>

@@ -11,7 +11,7 @@ French Core
 French is a cryptocurrency, and development platform which enables shared multi-nodes in larger high marketcap coins.
 
 
-French is currently a hybrid Proof of Stake (POS), and Masternode (MN) coin. The Platform is being built to feature shared multinodes in larger well known established projects.  Investors without large amounts of capital will be able to use the platform to connect with huge projects currently paying out coins equivalent to thousands of U.S. Dollars per month. In addition, those who wish to participate at higher levels can purchase a full French Masternode.
+French is currently a hybrid Proof of Stake (POS), and Frenchnode (MN) coin. The Platform is being built to feature shared multinodes in larger well known established projects.  Investors without large amounts of capital will be able to use the platform to connect with huge projects currently paying out coins equivalent to thousands of U.S. Dollars per month. In addition, those who wish to participate at higher levels can purchase a full French Frenchnode.
 The French development team is active, and goal oriented.  The community is able to participate, along with the developers, in the progress of French through very active Discord, Twitter, and Telegram accounts. The community is to be involved in matters involving the further development of the platform, especially in the adding of new shared masternodes. The French team believes in a steady flow of news just like you do.
 
 ## Links:

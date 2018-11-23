@@ -12,12 +12,12 @@
 #include "masternode-payments.h"
 #include "swifttx.h"
 
-// A helper object for signing messages from Masternodes
-CMasternodeSigner masternodeSigner;
+// A helper object for signing messages from Frenchnodes
+CFrenchnodeSigner masternodeSigner;
 
-void ThreadMasternodePool()
+void ThreadFrenchnodePool()
 {
-    if (fLiteMode) return; //disable all Masternode related functionality
+    if (fLiteMode) return; //disable all Frenchnode related functionality
 
     // Make this thread recognisable
     RenameThread("french-mnpool");
@@ -35,11 +35,11 @@ void ThreadMasternodePool()
 
             // check if we should activate or ping every few minutes,
             // start right after sync is considered to be done
-            if (c % MASTERNODE_PING_SECONDS == 0) activeMasternode.ManageStatus();
+            if (c % FRENCHNODE_PING_SECONDS == 0) activeFrenchnode.ManageStatus();
 
             if (c % 60 == 0) {
                 mnodeman.CheckAndRemove();
-                mnodeman.ProcessMasternodeConnections();
+                mnodeman.ProcessFrenchnodeConnections();
                 masternodePayments.CleanPaymentList();
                 CleanTransactionLocksList();
             }
@@ -47,7 +47,7 @@ void ThreadMasternodePool()
     }
 }
 
-bool CMasternodeSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
+bool CFrenchnodeSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
 {
     CScript payee2;
     payee2 = GetScriptForDestination(pubkey.GetID());
@@ -56,7 +56,7 @@ bool CMasternodeSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         BOOST_FOREACH (CTxOut out, txVin.vout) {
-            if (out.nValue == MASTERNODE_COLLATERAL * COIN) {
+            if (out.nValue == FRENCHNODE_COLLATERAL * COIN) {
                 if (out.scriptPubKey == payee2) return true;
             }
         }
@@ -65,7 +65,7 @@ bool CMasternodeSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     return false;
 }
 
-bool CMasternodeSigner::SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey)
+bool CFrenchnodeSigner::SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey)
 {
     CBitcoinSecret vchSecret;
     bool fGood = vchSecret.SetString(strSecret);
@@ -81,7 +81,7 @@ bool CMasternodeSigner::SetKey(std::string strSecret, std::string& errorMessage,
     return true;
 }
 
-bool CMasternodeSigner::GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet)
+bool CFrenchnodeSigner::GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet)
 {
     CBitcoinSecret vchSecret;
 
@@ -93,7 +93,7 @@ bool CMasternodeSigner::GetKeysFromSecret(std::string strSecret, CKey& keyRet, C
     return true;
 }
 
-bool CMasternodeSigner::SignMessage(std::string strMessage, std::string& errorMessage, vector<unsigned char>& vchSig, CKey key)
+bool CFrenchnodeSigner::SignMessage(std::string strMessage, std::string& errorMessage, vector<unsigned char>& vchSig, CKey key)
 {
     CHashWriter ss(SER_GETHASH, 0);
     ss << strMessageMagic;
@@ -107,7 +107,7 @@ bool CMasternodeSigner::SignMessage(std::string strMessage, std::string& errorMe
     return true;
 }
 
-bool CMasternodeSigner::VerifyMessage(CPubKey pubkey, vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage)
+bool CFrenchnodeSigner::VerifyMessage(CPubKey pubkey, vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage)
 {
     CHashWriter ss(SER_GETHASH, 0);
     ss << strMessageMagic;
@@ -120,16 +120,16 @@ bool CMasternodeSigner::VerifyMessage(CPubKey pubkey, vector<unsigned char>& vch
     }
 
     if (fDebug && pubkey2.GetID() != pubkey.GetID())
-        LogPrintf("CMasternodeSigner::VerifyMessage -- keys don't match: %s %s\n", pubkey2.GetID().ToString(), pubkey.GetID().ToString());
+        LogPrintf("CFrenchnodeSigner::VerifyMessage -- keys don't match: %s %s\n", pubkey2.GetID().ToString(), pubkey.GetID().ToString());
 
     return (pubkey2.GetID() == pubkey.GetID());
 }
 
-bool CMasternodeSigner::SetCollateralAddress(std::string strAddress)
+bool CFrenchnodeSigner::SetCollateralAddress(std::string strAddress)
 {
     CBitcoinAddress address;
     if (!address.SetString(strAddress)) {
-        LogPrintf("CMasternodeSigner::SetCollateralAddress - Invalid collateral address\n");
+        LogPrintf("CFrenchnodeSigner::SetCollateralAddress - Invalid collateral address\n");
         return false;
     }
     collateralPubKey = GetScriptForDestination(address.Get());

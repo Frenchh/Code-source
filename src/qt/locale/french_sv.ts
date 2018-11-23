@@ -595,8 +595,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Begär betalning (genererar QR kod och french: URls)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>Masternoder</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>Frenchnoder</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -853,7 +853,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>Adress</translation>
@@ -1392,15 +1392,15 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Laddar plånbok...</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
+        <source>Frenchnode options:</source>
         <translation>Masternod val:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternodens kö är full.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>Frenchnodens kö är full.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
+        <source>Frenchnode:</source>
         <translation>Masternod:</translation>
     </message>
     <message>
@@ -1456,7 +1456,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Detta är experimentiell mjukvara</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
+        <source>This is not a Frenchnode.</source>
         <translation>Dehär är ingen Masternod</translation>
     </message>
     <message>

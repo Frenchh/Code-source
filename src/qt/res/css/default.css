@@ -1335,13 +1335,13 @@ QDialog#TransactionDescDialog QTextEdit { /* Contents of Receive Coin Dialog */
 	border:1px solid #d7d7d7;
 }
 
-/**************************** MASTERNODE LIST *******************************************/
+/**************************** FRENCHNODE LIST *******************************************/
 
-QWidget#MasternodeList {
+QWidget#FrenchnodeList {
 	background-color:#ffffff;
 }
 
-QWidget#MasternodeList .QFrame#frameList {
+QWidget#FrenchnodeList .QFrame#frameList {
 	background-color:#ffffff;
 }
 

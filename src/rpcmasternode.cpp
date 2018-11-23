@@ -210,12 +210,12 @@ UniValue listmasternodes(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "[\n"
             "  {\n"
-            "    \"rank\": n,           (numeric) Masternode Rank (or 0 if not enabled)\n"
+            "    \"rank\": n,           (numeric) Frenchnode Rank (or 0 if not enabled)\n"
             "    \"txhash\": \"hash\",    (string) Collateral transaction hash\n"
             "    \"outidx\": n,         (numeric) Collateral transaction output index\n"
             "    \"status\": s,         (string) Status (ENABLED/EXPIRED/REMOVE/etc)\n"
-            "    \"addr\": \"addr\",      (string) Masternode FRENCH address\n"
-            "    \"version\": v,        (numeric) Masternode protocol version\n"
+            "    \"addr\": \"addr\",      (string) Frenchnode FRENCH address\n"
+            "    \"version\": v,        (numeric) Frenchnode protocol version\n"
             "    \"lastseen\": ttt,     (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last seen\n"
             "    \"activetime\": ttt,   (numeric) The time in seconds since epoch (Jan 1 1970 GMT) masternode has been active\n"
             "    \"lastpaid\": ttt,     (numeric) The time in seconds since epoch (Jan 1 1970 GMT) masternode was last paid\n"
@@ -233,14 +233,14 @@ UniValue listmasternodes(const UniValue& params, bool fHelp)
         if(!pindex) return 0;
         nHeight = pindex->nHeight;
     }
-    std::vector<pair<int, CMasternode> > vMasternodeRanks = mnodeman.GetMasternodeRanks(nHeight);
-    BOOST_FOREACH (PAIRTYPE(int, CMasternode) & s, vMasternodeRanks) {
+    std::vector<pair<int, CFrenchnode> > vFrenchnodeRanks = mnodeman.GetFrenchnodeRanks(nHeight);
+    BOOST_FOREACH (PAIRTYPE(int, CFrenchnode) & s, vFrenchnodeRanks) {
         UniValue obj(UniValue::VOBJ);
         std::string strVin = s.second.vin.prevout.ToStringShort();
         std::string strTxHash = s.second.vin.prevout.hash.ToString();
         uint32_t oIdx = s.second.vin.prevout.n;
 
-        CMasternode* mn = mnodeman.Find(s.second.vin);
+        CFrenchnode* mn = mnodeman.Find(s.second.vin);
 
         if (mn != NULL) {
             if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
@@ -310,7 +310,7 @@ UniValue getmasternodecount (const UniValue& params, bool fHelp)
             "  \"total\": n,        (numeric) Total masternodes\n"
             "  \"stable\": n,       (numeric) Stable count\n"
             "  \"enabled\": n,      (numeric) Enabled masternodes\n"
-            "  \"inqueue\": n       (numeric) Masternodes in queue\n"
+            "  \"inqueue\": n       (numeric) Frenchnodes in queue\n"
             "}\n"
             "\nExamples:\n" +
             HelpExampleCli("getmasternodecount", "") + HelpExampleRpc("getmasternodecount", ""));
@@ -320,7 +320,7 @@ UniValue getmasternodecount (const UniValue& params, bool fHelp)
     int ipv4 = 0, ipv6 = 0, onion = 0;
 
     if (chainActive.Tip())
-        mnodeman.GetNextMasternodeInQueueForPayment(chainActive.Tip()->nHeight, true, nCount);
+        mnodeman.GetNextFrenchnodeInQueueForPayment(chainActive.Tip()->nHeight, true, nCount);
 
     mnodeman.CountNetworks(ActiveProtocol(), ipv4, ipv6, onion);
 
@@ -353,15 +353,15 @@ UniValue masternodecurrent (const UniValue& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("masternodecurrent", "") + HelpExampleRpc("masternodecurrent", ""));
 
-    CMasternode* winner = mnodeman.GetCurrentMasterNode(1);
+    CFrenchnode* winner = mnodeman.GetCurrentMasterNode(1);
     if (winner) {
         UniValue obj(UniValue::VOBJ);
 
         obj.push_back(Pair("protocol", (int64_t)winner->protocolVersion));
         obj.push_back(Pair("txhash", winner->vin.prevout.hash.ToString()));
         obj.push_back(Pair("pubkey", CBitcoinAddress(winner->pubKeyCollateralAddress.GetID()).ToString()));
-        obj.push_back(Pair("lastseen", (winner->lastPing == CMasternodePing()) ? winner->sigTime : (int64_t)winner->lastPing.sigTime));
-        obj.push_back(Pair("activeseconds", (winner->lastPing == CMasternodePing()) ? 0 : (int64_t)(winner->lastPing.sigTime - winner->sigTime)));
+        obj.push_back(Pair("lastseen", (winner->lastPing == CFrenchnodePing()) ? winner->sigTime : (int64_t)winner->lastPing.sigTime));
+        obj.push_back(Pair("activeseconds", (winner->lastPing == CFrenchnodePing()) ? 0 : (int64_t)(winner->lastPing.sigTime - winner->sigTime)));
         return obj;
     }
 
@@ -376,20 +376,20 @@ UniValue masternodedebug (const UniValue& params, bool fHelp)
             "\nPrint masternode status\n"
 
             "\nResult:\n"
-            "\"status\"     (string) Masternode status message\n"
+            "\"status\"     (string) Frenchnode status message\n"
             "\nExamples:\n" +
             HelpExampleCli("masternodedebug", "") + HelpExampleRpc("masternodedebug", ""));
 
-    if (activeMasternode.status != ACTIVE_MASTERNODE_INITIAL || !masternodeSync.IsSynced())
-        return activeMasternode.GetStatus();
+    if (activeFrenchnode.status != ACTIVE_FRENCHNODE_INITIAL || !masternodeSync.IsSynced())
+        return activeFrenchnode.GetStatus();
 
     CTxIn vin = CTxIn();
     CPubKey pubkey = CScript();
     CKey key;
-    if (!activeMasternode.GetMasterNodeVin(vin, pubkey, key))
+    if (!activeFrenchnode.GetMasterNodeVin(vin, pubkey, key))
         throw runtime_error("Missing masternode input, please look at the documentation for instructions on masternode creation\n");
     else
-        return activeMasternode.GetStatus();
+        return activeFrenchnode.GetStatus();
 }
 
 UniValue startmasternode (const UniValue& params, bool fHelp)
@@ -417,10 +417,10 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. set         (string, required) Specify which set of masternode(s) to start.\n"
             "2. lockwallet  (boolean, required) Lock wallet after completion.\n"
-            "3. alias       (string) Masternode alias. Required if using 'alias' as the set.\n"
+            "3. alias       (string) Frenchnode alias. Required if using 'alias' as the set.\n"
 
             "\nResult: (for 'local' set):\n"
-            "\"status\"     (string) Masternode status message\n"
+            "\"status\"     (string) Frenchnode status message\n"
 
             "\nResult: (for other sets):\n"
             "{\n"
@@ -445,14 +445,14 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
         if (pwalletMain->IsLocked())
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-        if (activeMasternode.status != ACTIVE_MASTERNODE_STARTED) {
-            activeMasternode.status = ACTIVE_MASTERNODE_INITIAL; // TODO: consider better way
-            activeMasternode.ManageStatus();
+        if (activeFrenchnode.status != ACTIVE_FRENCHNODE_STARTED) {
+            activeFrenchnode.status = ACTIVE_FRENCHNODE_INITIAL; // TODO: consider better way
+            activeFrenchnode.ManageStatus();
             if (fLock)
                 pwalletMain->Lock();
         }
 
-        return activeMasternode.GetStatus();
+        return activeFrenchnode.GetStatus();
     }
 
     if (strCommand == "all" || strCommand == "many" || strCommand == "missing" || strCommand == "disabled") {
@@ -460,12 +460,12 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
         if ((strCommand == "missing" || strCommand == "disabled") &&
-            (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
-                masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED)) {
+            (masternodeSync.RequestedFrenchnodeAssets <= FRENCHNODE_SYNC_LIST ||
+                masternodeSync.RequestedFrenchnodeAssets == FRENCHNODE_SYNC_FAILED)) {
             throw runtime_error("You can't use this command until masternode list is synced\n");
         }
 
-        std::vector<CMasternodeConfig::CMasternodeEntry> mnEntries;
+        std::vector<CFrenchnodeConfig::CFrenchnodeEntry> mnEntries;
         mnEntries = masternodeConfig.getEntries();
 
         int successful = 0;
@@ -473,20 +473,20 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
 
         UniValue resultsObj(UniValue::VARR);
 
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
             std::string errorMessage;
             int nIndex;
             if(!mne.castOutputIndex(nIndex))
                 continue;
             CTxIn vin = CTxIn(uint256(mne.getTxHash()), uint32_t(nIndex));
-            CMasternode* pmn = mnodeman.Find(vin);
+            CFrenchnode* pmn = mnodeman.Find(vin);
 
             if (pmn != NULL) {
                 if (strCommand == "missing") continue;
                 if (strCommand == "disabled" && pmn->IsEnabled()) continue;
             }
 
-            bool result = activeMasternode.Register(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage);
+            bool result = activeFrenchnode.Register(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage);
 
             UniValue statusObj(UniValue::VOBJ);
             statusObj.push_back(Pair("alias", mne.getAlias()));
@@ -526,12 +526,12 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
         UniValue statusObj(UniValue::VOBJ);
         statusObj.push_back(Pair("alias", alias));
 
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
             if (mne.getAlias() == alias) {
                 found = true;
                 std::string errorMessage;
 
-                bool result = activeMasternode.Register(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage);
+                bool result = activeFrenchnode.Register(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage);
 
                 statusObj.push_back(Pair("result", result ? "successful" : "failed"));
 
@@ -574,7 +574,7 @@ UniValue createmasternodekey (const UniValue& params, bool fHelp)
             "\nCreate a new masternode private key\n"
 
             "\nResult:\n"
-            "\"key\"    (string) Masternode private key\n"
+            "\"key\"    (string) Frenchnode private key\n"
             "\nExamples:\n" +
             HelpExampleCli("createmasternodekey", "") + HelpExampleRpc("createmasternodekey", ""));
 
@@ -604,7 +604,7 @@ UniValue getmasternodeoutputs (const UniValue& params, bool fHelp)
             HelpExampleCli("getmasternodeoutputs", "") + HelpExampleRpc("getmasternodeoutputs", ""));
 
     // Find possible candidates
-    vector<COutput> possibleCoins = activeMasternode.SelectCoinsMasternode();
+    vector<COutput> possibleCoins = activeFrenchnode.SelectCoinsFrenchnode();
 
     UniValue ret(UniValue::VARR);
     BOOST_FOREACH (COutput& out, possibleCoins) {
@@ -647,17 +647,17 @@ UniValue listmasternodeconf (const UniValue& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("listmasternodeconf", "") + HelpExampleRpc("listmasternodeconf", ""));
 
-    std::vector<CMasternodeConfig::CMasternodeEntry> mnEntries;
+    std::vector<CFrenchnodeConfig::CFrenchnodeEntry> mnEntries;
     mnEntries = masternodeConfig.getEntries();
 
     UniValue ret(UniValue::VARR);
 
-    BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+    BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
         int nIndex;
         if(!mne.castOutputIndex(nIndex))
             continue;
         CTxIn vin = CTxIn(uint256(mne.getTxHash()), uint32_t(nIndex));
-        CMasternode* pmn = mnodeman.Find(vin);
+        CFrenchnode* pmn = mnodeman.Find(vin);
 
         std::string strStatus = pmn ? pmn->Status() : "MISSING";
 
@@ -690,10 +690,10 @@ UniValue getmasternodestatus (const UniValue& params, bool fHelp)
             "{\n"
             "  \"txhash\": \"xxxx\",      (string) Collateral transaction hash\n"
             "  \"outputidx\": n,        (numeric) Collateral transaction output index number\n"
-            "  \"netaddr\": \"xxxx\",     (string) Masternode network address\n"
+            "  \"netaddr\": \"xxxx\",     (string) Frenchnode network address\n"
             "  \"addr\": \"xxxx\",        (string) FRENCH address for masternode payments\n"
-            "  \"status\": \"xxxx\",      (string) Masternode status\n"
-            "  \"message\": \"xxxx\"      (string) Masternode status message\n"
+            "  \"status\": \"xxxx\",      (string) Frenchnode status\n"
+            "  \"message\": \"xxxx\"      (string) Frenchnode status message\n"
             "}\n"
 
             "\nExamples:\n" +
@@ -701,20 +701,20 @@ UniValue getmasternodestatus (const UniValue& params, bool fHelp)
 
     if (!fMasterNode) throw runtime_error("This is not a masternode");
 
-    CMasternode* pmn = mnodeman.Find(activeMasternode.vin);
+    CFrenchnode* pmn = mnodeman.Find(activeFrenchnode.vin);
 
     if (pmn) {
         UniValue mnObj(UniValue::VOBJ);
-        mnObj.push_back(Pair("txhash", activeMasternode.vin.prevout.hash.ToString()));
-        mnObj.push_back(Pair("outputidx", (uint64_t)activeMasternode.vin.prevout.n));
-        mnObj.push_back(Pair("netaddr", activeMasternode.service.ToString()));
+        mnObj.push_back(Pair("txhash", activeFrenchnode.vin.prevout.hash.ToString()));
+        mnObj.push_back(Pair("outputidx", (uint64_t)activeFrenchnode.vin.prevout.n));
+        mnObj.push_back(Pair("netaddr", activeFrenchnode.service.ToString()));
         mnObj.push_back(Pair("addr", CBitcoinAddress(pmn->pubKeyCollateralAddress.GetID()).ToString()));
-        mnObj.push_back(Pair("status", activeMasternode.status));
-        mnObj.push_back(Pair("message", activeMasternode.GetStatus()));
+        mnObj.push_back(Pair("status", activeFrenchnode.status));
+        mnObj.push_back(Pair("message", activeFrenchnode.GetStatus()));
         return mnObj;
     }
-    throw runtime_error("Masternode not found in the list of available masternodes. Current status: "
-                        + activeMasternode.GetStatus());
+    throw runtime_error("Frenchnode not found in the list of available masternodes. Current status: "
+                        + activeFrenchnode.GetStatus());
 }
 
 UniValue getmasternodewinners (const UniValue& params, bool fHelp)
@@ -830,7 +830,7 @@ UniValue getmasternodescores (const UniValue& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  xxxx: \"xxxx\"   (numeric : string) Block height : Masternode hash\n"
+            "  xxxx: \"xxxx\"   (numeric : string) Block height : Frenchnode hash\n"
             "  ,...\n"
             "}\n"
             "\nExamples:\n" +
@@ -847,19 +847,19 @@ UniValue getmasternodescores (const UniValue& params, bool fHelp)
     }
     UniValue obj(UniValue::VOBJ);
 
-    std::vector<CMasternode> vMasternodes = mnodeman.GetFullMasternodeVector();
+    std::vector<CFrenchnode> vFrenchnodes = mnodeman.GetFullFrenchnodeVector();
     for (int nHeight = chainActive.Tip()->nHeight - nLast; nHeight < chainActive.Tip()->nHeight + 20; nHeight++) {
         uint256 nHigh = 0;
-        CMasternode* pBestMasternode = NULL;
-        BOOST_FOREACH (CMasternode& mn, vMasternodes) {
+        CFrenchnode* pBestFrenchnode = NULL;
+        BOOST_FOREACH (CFrenchnode& mn, vFrenchnodes) {
             uint256 n = mn.CalculateScore(1, nHeight - 100);
             if (n > nHigh) {
                 nHigh = n;
-                pBestMasternode = &mn;
+                pBestFrenchnode = &mn;
             }
         }
-        if (pBestMasternode)
-            obj.push_back(Pair(strprintf("%d", nHeight), pBestMasternode->vin.prevout.hash.ToString().c_str()));
+        if (pBestFrenchnode)
+            obj.push_back(Pair(strprintf("%d", nHeight), pBestFrenchnode->vin.prevout.hash.ToString().c_str()));
     }
 
     return obj;

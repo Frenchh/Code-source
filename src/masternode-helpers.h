@@ -4,8 +4,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MASTERNODEHELPERS_H
-#define MASTERNODEHELPERS_H
+#ifndef FRENCHNODEHELPERS_H
+#define FRENCHNODEHELPERS_H
 
 #include "main.h"
 #include "sync.h"
@@ -13,7 +13,7 @@
 
 /** Helper object for signing and checking signatures
  */
-class CMasternodeSigner
+class CFrenchnodeSigner
 {
 public:
     CScript collateralPubKey;
@@ -33,14 +33,14 @@ public:
 
     void InitCollateralAddress()
     {
-        SetCollateralAddress(Params().MasternodePoolDummyAddress());
+        SetCollateralAddress(Params().FrenchnodePoolDummyAddress());
     }
 
 };
 
-void ThreadMasternodePool();
+void ThreadFrenchnodePool();
 
-extern CMasternodeSigner masternodeSigner;
+extern CFrenchnodeSigner masternodeSigner;
 
 
 #endif

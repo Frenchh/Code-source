@@ -599,8 +599,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Pyydä maksuja (Generoi QR koodeja ja french: URIja)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodet</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodet</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -647,12 +647,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Avaa lompakko &amp;Konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Avaa &amp;Masternode konfiguraatiotiedosto</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Avaa &amp;Frenchnode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Avaa Masternode konfiguraatiotiedosto</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>Avaa Frenchnode konfiguraatiotiedosto</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -962,7 +962,7 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Lomake</translation>
@@ -1071,8 +1071,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lähetä panoksiin</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Lähetä Masternode palkkioihin</translation>
+        <source>Send For Frenchnode Rewards</source>
+        <translation>Lähetä Frenchnode palkkioihin</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1162,8 +1162,8 @@ Please check the address and try again.</source>
         <translation>Ota käyttöön coin &amp;kontrolli palvelut</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Näytä Masternode välilehti</translation>
+        <source>Show Frenchnodes Tab</source>
+        <translation>Näytä Frenchnode välilehti</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1400,7 +1400,7 @@ Please check the address and try again.</source>
         <translation>Avaa French debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Masternodien määrä</translation>
     </message>
     <message>
@@ -2414,8 +2414,8 @@ Please check the address and try again.</source>
         <translation>Lataus valmis</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Virhe Masternodeen yhdistyksessä</translation>
+        <source>Error connecting to Frenchnode.</source>
+        <translation>Virhe Frenchnodeen yhdistyksessä</translation>
     </message>
     <message>
         <source>Error initializing block database</source>

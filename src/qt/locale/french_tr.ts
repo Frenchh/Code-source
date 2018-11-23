@@ -252,7 +252,7 @@
     <name>Intro</name>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>adres</translation>

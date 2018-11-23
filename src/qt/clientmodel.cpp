@@ -32,7 +32,7 @@ ClientModel::ClientModel(OptionsModel* optionsModel, QObject* parent) : QObject(
                                                                         optionsModel(optionsModel),
                                                                         peerTableModel(0),
                                                                         cachedNumBlocks(0),
-                                                                        cachedMasternodeCountString(""),
+                                                                        cachedFrenchnodeCountString(""),
                                                                         cachedReindexing(0), cachedImporting(0),
                                                                         numBlocksAtStartup(-1), pollTimer(0)
 {
@@ -68,7 +68,7 @@ int ClientModel::getNumConnections(unsigned int flags) const
     return nNum;
 }
 
-QString ClientModel::getMasternodeCountString() const
+QString ClientModel::getFrenchnodeCountString() const
 {
     int ipv4 = 0, ipv6 = 0, onion = 0;
     mnodeman.CountNetworks(ActiveProtocol(), ipv4, ipv6, onion);
@@ -132,12 +132,12 @@ void ClientModel::updateTimer()
     // check for changed number of blocks we have, number of blocks peers claim to have, reindexing state and importing state
     if (cachedNumBlocks != newNumBlocks ||
         cachedReindexing != fReindex || cachedImporting != fImporting ||
-        masternodeSync.RequestedMasternodeAttempt != prevAttempt || masternodeSync.RequestedMasternodeAssets != prevAssets) {
+        masternodeSync.RequestedFrenchnodeAttempt != prevAttempt || masternodeSync.RequestedFrenchnodeAssets != prevAssets) {
         cachedNumBlocks = newNumBlocks;
         cachedReindexing = fReindex;
         cachedImporting = fImporting;
-        prevAttempt = masternodeSync.RequestedMasternodeAttempt;
-        prevAssets = masternodeSync.RequestedMasternodeAssets;
+        prevAttempt = masternodeSync.RequestedFrenchnodeAttempt;
+        prevAssets = masternodeSync.RequestedFrenchnodeAssets;
 
         emit numBlocksChanged(newNumBlocks);
     }
@@ -153,12 +153,12 @@ void ClientModel::updateMnTimer()
     TRY_LOCK(cs_main, lockMain);
     if (!lockMain)
         return;
-    QString newMasternodeCountString = getMasternodeCountString();
+    QString newFrenchnodeCountString = getFrenchnodeCountString();
 
-    if (cachedMasternodeCountString != newMasternodeCountString) {
-        cachedMasternodeCountString = newMasternodeCountString;
+    if (cachedFrenchnodeCountString != newFrenchnodeCountString) {
+        cachedFrenchnodeCountString = newFrenchnodeCountString;
 
-        emit strMasternodesChanged(cachedMasternodeCountString);
+        emit strFrenchnodesChanged(cachedFrenchnodeCountString);
     }
 }
 

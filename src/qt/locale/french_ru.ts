@@ -602,7 +602,7 @@
         <translation>Запросить платежи (генерирует QR-код и french: URI)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation>&amp;Мастерноды</translation>
     </message>
     <message>
@@ -650,11 +650,11 @@
         <translation>Открыть файл &amp;настроек кошелька</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>Открыть файл &amp;настроек мастернод</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>Открыть файл настроек мастернод</translation>
     </message>
     <message>
@@ -1232,13 +1232,13 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>Мои Мастерноды</translation>
     </message>
     <message>
@@ -1431,7 +1431,7 @@ MultiSend будет неактивен до тех пор, пока вы не �
         <translation>Передавать вознаграждение от хранения</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
+        <source>Send For Frenchnode Rewards</source>
         <translation>Передавать вознаграждение за мастерноды</translation>
     </message>
     <message>
@@ -1571,7 +1571,7 @@ Please check the address and try again.</source>
         <translation>Показать список всех ваших мастернод в первой вкладке&lt;br/&gt;и всех мастернод в сети во второй вкладке.</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation>Показать вкладку Мастернод</translation>
     </message>
     <message>
@@ -2029,7 +2029,7 @@ Please check the address and try again.</source>
         <translation>Открыть протокол отладки French. Это может занять некоторе время, если файл протокола очень большой.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Количество мастернод</translation>
     </message>
     <message>
@@ -2754,7 +2754,7 @@ Please check the address and try again.</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>Вознаграждение Мастерноды</translation>
     </message>
     <message>
@@ -2801,7 +2801,7 @@ Please check the address and try again.</source>
         <translation>Отправить</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>Вознаграждение Мастерноды</translation>
     </message>
     <message>
@@ -3076,7 +3076,7 @@ Please check the address and try again.</source>
         <translation>Загрузка кошелька ...</translation>
     </message>
     <message>
-        <source>Masternode:</source>
+        <source>Frenchnode:</source>
         <translation>Мастернода:</translation>
     </message>
     <message>
@@ -3084,7 +3084,7 @@ Please check the address and try again.</source>
         <translation>Отсутствует входная информация о транзакции.</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
+        <source>No Frenchnodes detected.</source>
         <translation>Мастерноды не найдены.</translation>
     </message>
     <message>

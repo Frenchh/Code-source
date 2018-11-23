@@ -606,8 +606,8 @@
         <translation>Anmod om betaling (genrerer QR kode og French URL)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternoder</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnoder</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -654,12 +654,12 @@
         <translation>Åbn tegnebog &amp;konfigurationsfil</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Åbn &amp;Masternode konfigurationsfil</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Åbn &amp;Frenchnode konfigurationsfil</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>ÅbnMasternode konfigurationsfil</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>ÅbnFrenchnode konfigurationsfil</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -1236,13 +1236,13 @@ Adresse: %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Formular</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>Mine masternoder</translation>
     </message>
     <message>
@@ -1435,8 +1435,8 @@ Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
         <translation>Send til indskud</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Send til Masternodebelønning</translation>
+        <source>Send For Frenchnode Rewards</source>
+        <translation>Send til Frenchnodebelønning</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1575,7 +1575,7 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Vis en liste over alle Deres masternoder i første underfane &lt;br/&gt; og vis en liste over  alle masternoder på netværket i anden underfane</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation>Vis fane med masternoder</translation>
     </message>
     <message>
@@ -2037,7 +2037,7 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Åbn French debug logfilen fra den aktuelle datamappe. Det kan godt tage lidt tid hvis filen er meget stor.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Antal masternoder</translation>
     </message>
     <message>
@@ -3241,8 +3241,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Modtaget med</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternodebelønning</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnodebelønning</translation>
     </message>
     <message>
         <source>Received from</source>
@@ -3356,8 +3356,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Mintet</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternodebelønning</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnodebelønning</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3567,8 +3567,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Slet alle tegnebogens transaktioner og genskab kun fra blokkæden ved at tilføje -rescan i forbindes med opstart.</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Slå alle French funktioner fra (Masternoder, SwiftTX, Budgetting)(0-1,default:%u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Slå alle French funktioner fra (Frenchnoder, SwiftTX, Budgetting)(0-1,default:%u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3836,7 +3836,7 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Bloker optioner for oprettelse:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
+        <source>Can't find random Frenchnode.</source>
         <translation>Kan ikke finde en tilfældig masternode.</translation>
     </message>
     <message>
@@ -3940,7 +3940,7 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Der er ikke plads til flere poster</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
+        <source>Error connecting to Frenchnode.</source>
         <translation>Fejl ved oprettelse af forbindelse til masternode.</translation>
     </message>
     <message>
@@ -4204,16 +4204,16 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Vedligehold maksimalt &lt;n&gt; forbindelser til peers (default: %u)</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Masternodeoptioner</translation>
+        <source>Frenchnode options:</source>
+        <translation>Frenchnodeoptioner</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternodens kø er fyldt op.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>Frenchnodens kø er fyldt op.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation>Frenchnode:</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4232,11 +4232,11 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Der skal specificeres en port med -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
+        <source>No Frenchnodes detected.</source>
         <translation>Ingen masternoder fundet.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
+        <source>No compatible Frenchnode found.</source>
         <translation>Ingen kompatible masternoder fundet.</translation>
     </message>
     <message>
@@ -4256,7 +4256,7 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Ikke nok fildescriptors tilgængelige</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
+        <source>Not in the Frenchnode list.</source>
         <translation>Findes ikke i masternodelisten</translation>
     </message>
     <message>
@@ -4500,7 +4500,7 @@ For eksempel: alertnotify=Echo %% | mail - s "French ALARM!" e-mail@administrato
         <translation>Dette er ment som et tilbagekørings test- og appudviklingsværktøj.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
+        <source>This is not a Frenchnode.</source>
         <translation>Dette er ikke en masternode</translation>
     </message>
     <message>

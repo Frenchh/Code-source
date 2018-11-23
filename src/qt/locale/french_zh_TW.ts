@@ -594,12 +594,12 @@
         <translation>請求付款 (會產生 QR Code跟 french 位址)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>瀏覽 Masternodes</translation>
+        <translation>瀏覽 Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;About French Core</source>
@@ -642,12 +642,12 @@
         <translation>&amp;打開錢包設定檔</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>&amp;打開Masternode設定檔</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>&amp;打開Frenchnode設定檔</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>打開Masternode設定檔</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>打開Frenchnode設定檔</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -708,7 +708,7 @@
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>位址</translation>

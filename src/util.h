@@ -35,7 +35,7 @@ extern bool fMasterNode;
 extern bool fLiteMode;
 extern bool fEnableSwiftTX;
 extern int nSwiftTXDepth;
-extern int64_t enforceMasternodePaymentsTime;
+extern int64_t enforceFrenchnodePaymentsTime;
 extern std::string strMasterNodeAddr;
 extern int keysLoaded;
 extern bool fSucessfullyLoaded;
@@ -109,7 +109,7 @@ bool TryCreateDirectory(const boost::filesystem::path& p);
 boost::filesystem::path GetDefaultDataDir();
 const boost::filesystem::path& GetDataDir(bool fNetSpecific = true);
 boost::filesystem::path GetConfigFile();
-boost::filesystem::path GetMasternodeConfigFile();
+boost::filesystem::path GetFrenchnodeConfigFile();
 #ifndef WIN32
 boost::filesystem::path GetPidFile();
 void CreatePidFile(const boost::filesystem::path& path, pid_t pid);

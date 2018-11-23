@@ -594,8 +594,8 @@
         <translation>Requisitar pagamentos (gera códigos QR e french: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -642,12 +642,12 @@
         <translation>Abrir arquivo de &amp;Configuração de Carteira</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Abrir arquivo de Configuração de &amp;Masternode</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Abrir arquivo de Configuração de &amp;Frenchnode</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Abrir arquivo de configuração de Masternode</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>Abrir arquivo de configuração de Frenchnode</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -1209,14 +1209,14 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Meus Masternodes</translation>
+        <source>My Frenchnodes</source>
+        <translation>Meus Frenchnodes</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1378,8 +1378,8 @@ MultiSend: %1</translation>
         <translation>Enviar para Stakes</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Enviar para recompensas de Masternode</translation>
+        <source>Send For Frenchnode Rewards</source>
+        <translation>Enviar para recompensas de Frenchnode</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1503,8 +1503,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Habilitar &amp;funcções de controle de moeda</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Mostra aba de Masternodes</translation>
+        <source>Show Frenchnodes Tab</source>
+        <translation>Mostra aba de Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;Network</source>
@@ -1861,8 +1861,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
-        <translation>Número de Masternodes</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Número de Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -2925,8 +2925,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Recebido com</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Recompensa de Masternode</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Recompensa de Frenchnode</translation>
     </message>
     <message>
         <source>Received from</source>
@@ -3036,8 +3036,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Cunhado</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Recompensa de Masternode</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Recompensa de Frenchnode</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3207,8 +3207,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes da blockchain através de -rescan na inicialização</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar todas as funcionalidades específicas French (Masternodes, SwiftTX, Budgeting) (0-1, padrão: %u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar todas as funcionalidades específicas French (Frenchnodes, SwiftTX, Budgeting) (0-1, padrão: %u)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -3315,8 +3315,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Opções de criação de bloco:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Não conseguiu encontrar um Masternode aleatório.</translation>
+        <source>Can't find random Frenchnode.</source>
+        <translation>Não conseguiu encontrar um Frenchnode aleatório.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -3375,8 +3375,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>As entradas estão cheias.</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Erro ao conectar ao Masternode.</translation>
+        <source>Error connecting to Frenchnode.</source>
+        <translation>Erro ao conectar ao Frenchnode.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -3583,28 +3583,28 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Manter pelo menos &lt;n&gt; conexões aos pares (padrão: %u)</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Opções de Masternode:</translation>
+        <source>Frenchnode options:</source>
+        <translation>Opções de Frenchnode:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>A fila do Masternode está cheia.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>A fila do Frenchnode está cheia.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation>Frenchnode:</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Necessário especificar uma porta com -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Nenhum Masternode detectado.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation>Nenhum Frenchnode detectado.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Nenhum Masternode compatível encontrado.</translation>
+        <source>No compatible Frenchnode found.</source>
+        <translation>Nenhum Frenchnode compatível encontrado.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -3619,8 +3619,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Não é compatível com as transações existentes.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Não está na lista de Masternodes.</translation>
+        <source>Not in the Frenchnode list.</source>
+        <translation>Não está na lista de Frenchnodes.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -3775,8 +3775,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Este software é experimental.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Isto não é um Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>Isto não é um Frenchnode.</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>

@@ -68,7 +68,7 @@ CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn)
     scriptPubKey = scriptPubKeyIn;
 }
 
-bool COutPoint::IsMasternodeReward(const CTransaction* tx) const
+bool COutPoint::IsFrenchnodeReward(const CTransaction* tx) const
 {
     if(!tx->IsCoinStake())
         return false;

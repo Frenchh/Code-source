@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MASTERNODE_PAYMENTS_H
-#define MASTERNODE_PAYMENTS_H
+#ifndef FRENCHNODE_PAYMENTS_H
+#define FRENCHNODE_PAYMENTS_H
 
 #include "key.h"
 #include "main.h"
@@ -16,29 +16,29 @@
 using namespace std;
 
 extern CCriticalSection cs_vecPayments;
-extern CCriticalSection cs_mapMasternodeBlocks;
-extern CCriticalSection cs_mapMasternodePayeeVotes;
+extern CCriticalSection cs_mapFrenchnodeBlocks;
+extern CCriticalSection cs_mapFrenchnodePayeeVotes;
 
-class CMasternodePayments;
-class CMasternodePaymentWinner;
-class CMasternodeBlockPayees;
+class CFrenchnodePayments;
+class CFrenchnodePaymentWinner;
+class CFrenchnodeBlockPayees;
 
-extern CMasternodePayments masternodePayments;
+extern CFrenchnodePayments masternodePayments;
 
-#define MNPAYMENTS_SIGNATURES_REQUIRED 6
+#define MNPAYMENTS_SIGNATURES_REQUIRED 7
 #define MNPAYMENTS_SIGNATURES_TOTAL 10
 
-void ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+void ProcessMessageFrenchnodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight);
 std::string GetRequiredPaymentsString(int nBlockHeight);
 bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMinted);
 void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStake);
 
-void DumpMasternodePayments();
+void DumpFrenchnodePayments();
 
-/** Save Masternode Payment Data (mnpayments.dat)
+/** Save Frenchnode Payment Data (mnpayments.dat)
  */
-class CMasternodePaymentDB
+class CFrenchnodePaymentDB
 {
 private:
     boost::filesystem::path pathDB;
@@ -55,24 +55,24 @@ public:
         IncorrectFormat
     };
 
-    CMasternodePaymentDB();
-    bool Write(const CMasternodePayments& objToSave);
-    ReadResult Read(CMasternodePayments& objToLoad, bool fDryRun = false);
+    CFrenchnodePaymentDB();
+    bool Write(const CFrenchnodePayments& objToSave);
+    ReadResult Read(CFrenchnodePayments& objToLoad, bool fDryRun = false);
 };
 
-class CMasternodePayee
+class CFrenchnodePayee
 {
 public:
     CScript scriptPubKey;
     int nVotes;
 
-    CMasternodePayee()
+    CFrenchnodePayee()
     {
         scriptPubKey = CScript();
         nVotes = 0;
     }
 
-    CMasternodePayee(CScript payee, int nVotesIn)
+    CFrenchnodePayee(CScript payee, int nVotesIn)
     {
         scriptPubKey = payee;
         nVotes = nVotesIn;
@@ -89,18 +89,18 @@ public:
 };
 
 // Keep track of votes for payees from masternodes
-class CMasternodeBlockPayees
+class CFrenchnodeBlockPayees
 {
 public:
     int nBlockHeight;
-    std::vector<CMasternodePayee> vecPayments;
+    std::vector<CFrenchnodePayee> vecPayments;
 
-    CMasternodeBlockPayees()
+    CFrenchnodeBlockPayees()
     {
         nBlockHeight = 0;
         vecPayments.clear();
     }
-    CMasternodeBlockPayees(int nBlockHeightIn)
+    CFrenchnodeBlockPayees(int nBlockHeightIn)
     {
         nBlockHeight = nBlockHeightIn;
         vecPayments.clear();
@@ -110,14 +110,14 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& payee, vecPayments) {
+        BOOST_FOREACH (CFrenchnodePayee& payee, vecPayments) {
             if (payee.scriptPubKey == payeeIn) {
                 payee.nVotes += nIncrement;
                 return;
             }
         }
 
-        CMasternodePayee c(payeeIn, nIncrement);
+        CFrenchnodePayee c(payeeIn, nIncrement);
         vecPayments.push_back(c);
     }
 
@@ -126,7 +126,7 @@ public:
         LOCK(cs_vecPayments);
 
         int nVotes = -1;
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
+        BOOST_FOREACH (CFrenchnodePayee& p, vecPayments) {
             if (p.nVotes > nVotes) {
                 payee = p.scriptPubKey;
                 nVotes = p.nVotes;
@@ -140,7 +140,7 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
+        BOOST_FOREACH (CFrenchnodePayee& p, vecPayments) {
             if (p.nVotes >= nVotesReq && p.scriptPubKey == payee) return true;
         }
 
@@ -161,26 +161,26 @@ public:
 };
 
 // for storing the winning payments
-class CMasternodePaymentWinner
+class CFrenchnodePaymentWinner
 {
 public:
-    CTxIn vinMasternode;
+    CTxIn vinFrenchnode;
 
     int nBlockHeight;
     CScript payee;
     std::vector<unsigned char> vchSig;
 
-    CMasternodePaymentWinner()
+    CFrenchnodePaymentWinner()
     {
         nBlockHeight = 0;
-        vinMasternode = CTxIn();
+        vinFrenchnode = CTxIn();
         payee = CScript();
     }
 
-    CMasternodePaymentWinner(CTxIn vinIn)
+    CFrenchnodePaymentWinner(CTxIn vinIn)
     {
         nBlockHeight = 0;
-        vinMasternode = vinIn;
+        vinFrenchnode = vinIn;
         payee = CScript();
     }
 
@@ -189,12 +189,12 @@ public:
         CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
         ss << payee;
         ss << nBlockHeight;
-        ss << vinMasternode.prevout;
+        ss << vinFrenchnode.prevout;
 
         return ss.GetHash();
     }
 
-    bool Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode);
+    bool Sign(CKey& keyFrenchnode, CPubKey& pubKeyFrenchnode);
     bool IsValid(CNode* pnode, std::string& strError);
     bool SignatureValid();
     void Relay();
@@ -210,7 +210,7 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
-        READWRITE(vinMasternode);
+        READWRITE(vinFrenchnode);
         READWRITE(nBlockHeight);
         READWRITE(payee);
         READWRITE(vchSig);
@@ -219,7 +219,7 @@ public:
     std::string ToString()
     {
         std::string ret = "";
-        ret += vinMasternode.ToString();
+        ret += vinFrenchnode.ToString();
         ret += ", " + boost::lexical_cast<std::string>(nBlockHeight);
         ret += ", " + payee.ToString();
         ret += ", " + boost::lexical_cast<std::string>((int)vchSig.size());
@@ -228,22 +228,22 @@ public:
 };
 
 //
-// Masternode Payments Class
+// Frenchnode Payments Class
 // Keeps track of who should get paid for which blocks
 //
 
-class CMasternodePayments
+class CFrenchnodePayments
 {
 private:
     int nSyncedFromPeer;
     int nLastBlockHeight;
 
 public:
-    std::map<uint256, CMasternodePaymentWinner> mapMasternodePayeeVotes;
-    std::map<int, CMasternodeBlockPayees> mapMasternodeBlocks;
-    std::map<uint256, int> mapMasternodesLastVote; //prevout.hash + prevout.n, nBlockHeight
+    std::map<uint256, CFrenchnodePaymentWinner> mapFrenchnodePayeeVotes;
+    std::map<int, CFrenchnodeBlockPayees> mapFrenchnodeBlocks;
+    std::map<uint256, int> mapFrenchnodesLastVote; //prevout.hash + prevout.n, nBlockHeight
 
-    CMasternodePayments()
+    CFrenchnodePayments()
     {
         nSyncedFromPeer = 0;
         nLastBlockHeight = 0;
@@ -251,39 +251,39 @@ public:
 
     void Clear()
     {
-        LOCK2(cs_mapMasternodeBlocks, cs_mapMasternodePayeeVotes);
-        mapMasternodeBlocks.clear();
-        mapMasternodePayeeVotes.clear();
+        LOCK2(cs_mapFrenchnodeBlocks, cs_mapFrenchnodePayeeVotes);
+        mapFrenchnodeBlocks.clear();
+        mapFrenchnodePayeeVotes.clear();
     }
 
-    bool AddWinningMasternode(CMasternodePaymentWinner& winner);
+    bool AddWinningFrenchnode(CFrenchnodePaymentWinner& winner);
     bool ProcessBlock(int nBlockHeight);
 
     void Sync(CNode* node, int nCountNeeded);
     void CleanPaymentList();
-    int LastPayment(CMasternode& mn);
+    int LastPayment(CFrenchnode& mn);
 
     bool GetBlockPayee(int nBlockHeight, CScript& payee);
     bool IsTransactionValid(const CTransaction& txNew, int nBlockHeight);
-    bool IsScheduled(CMasternode& mn, int nNotBlockHeight);
+    bool IsScheduled(CFrenchnode& mn, int nNotBlockHeight);
 
-    bool CanVote(COutPoint outMasternode, int nBlockHeight)
+    bool CanVote(COutPoint outFrenchnode, int nBlockHeight)
     {
-        LOCK(cs_mapMasternodePayeeVotes);
+        LOCK(cs_mapFrenchnodePayeeVotes);
 
-        if (mapMasternodesLastVote.count(outMasternode.hash + outMasternode.n)) {
-            if (mapMasternodesLastVote[outMasternode.hash + outMasternode.n] == nBlockHeight) {
+        if (mapFrenchnodesLastVote.count(outFrenchnode.hash + outFrenchnode.n)) {
+            if (mapFrenchnodesLastVote[outFrenchnode.hash + outFrenchnode.n] == nBlockHeight) {
                 return false;
             }
         }
 
         //record this masternode voted
-        mapMasternodesLastVote[outMasternode.hash + outMasternode.n] = nBlockHeight;
+        mapFrenchnodesLastVote[outFrenchnode.hash + outFrenchnode.n] = nBlockHeight;
         return true;
     }
 
-    int GetMinMasternodePaymentsProto();
-    void ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+    int GetMinFrenchnodePaymentsProto();
+    void ProcessMessageFrenchnodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
     std::string GetRequiredPaymentsString(int nBlockHeight);
     void FillBlockPayee(CMutableTransaction& txNew, int64_t nFees, bool fProofOfStake);
     std::string ToString() const;
@@ -295,8 +295,8 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
-        READWRITE(mapMasternodePayeeVotes);
-        READWRITE(mapMasternodeBlocks);
+        READWRITE(mapFrenchnodePayeeVotes);
+        READWRITE(mapFrenchnodeBlocks);
     }
 };
 

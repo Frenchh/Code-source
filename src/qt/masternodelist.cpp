@@ -17,8 +17,8 @@
 
 CCriticalSection cs_masternodes;
 
-MasternodeList::MasternodeList(QWidget* parent) : QWidget(parent),
-                                                  ui(new Ui::MasternodeList),
+FrenchnodeList::FrenchnodeList(QWidget* parent) : QWidget(parent),
+                                                  ui(new Ui::FrenchnodeList),
                                                   clientModel(0),
                                                   walletModel(0)
 {
@@ -33,20 +33,20 @@ MasternodeList::MasternodeList(QWidget* parent) : QWidget(parent),
     int columnActiveWidth = 130;
     int columnLastSeenWidth = 130;
 
-    ui->tableWidgetMyMasternodes->setAlternatingRowColors(true);
-    ui->tableWidgetMyMasternodes->setColumnWidth(0, columnAliasWidth);
-    ui->tableWidgetMyMasternodes->setColumnWidth(1, columnAddressWidth);
-    ui->tableWidgetMyMasternodes->setColumnWidth(2, columnProtocolWidth);
-    ui->tableWidgetMyMasternodes->setColumnWidth(3, columnStatusWidth);
-    ui->tableWidgetMyMasternodes->setColumnWidth(4, columnActiveWidth);
-    ui->tableWidgetMyMasternodes->setColumnWidth(5, columnLastSeenWidth);
+    ui->tableWidgetMyFrenchnodes->setAlternatingRowColors(true);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(0, columnAliasWidth);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(1, columnAddressWidth);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(2, columnProtocolWidth);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(3, columnStatusWidth);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(4, columnActiveWidth);
+    ui->tableWidgetMyFrenchnodes->setColumnWidth(5, columnLastSeenWidth);
 
-    ui->tableWidgetMyMasternodes->setContextMenuPolicy(Qt::CustomContextMenu);
+    ui->tableWidgetMyFrenchnodes->setContextMenuPolicy(Qt::CustomContextMenu);
 
     QAction* startAliasAction = new QAction(tr("Start alias"), this);
     contextMenu = new QMenu();
     contextMenu->addAction(startAliasAction);
-    connect(ui->tableWidgetMyMasternodes, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showContextMenu(const QPoint&)));
+    connect(ui->tableWidgetMyFrenchnodes, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showContextMenu(const QPoint&)));
     connect(startAliasAction, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
 
     timer = new QTimer(this);
@@ -58,42 +58,42 @@ MasternodeList::MasternodeList(QWidget* parent) : QWidget(parent),
     nTimeFilterUpdated = GetTime();
 }
 
-MasternodeList::~MasternodeList()
+FrenchnodeList::~FrenchnodeList()
 {
     delete ui;
 }
 
-void MasternodeList::setClientModel(ClientModel* model)
+void FrenchnodeList::setClientModel(ClientModel* model)
 {
     this->clientModel = model;
 }
 
-void MasternodeList::setWalletModel(WalletModel* model)
+void FrenchnodeList::setWalletModel(WalletModel* model)
 {
     this->walletModel = model;
 }
 
-void MasternodeList::showContextMenu(const QPoint& point)
+void FrenchnodeList::showContextMenu(const QPoint& point)
 {
-    QTableWidgetItem* item = ui->tableWidgetMyMasternodes->itemAt(point);
+    QTableWidgetItem* item = ui->tableWidgetMyFrenchnodes->itemAt(point);
     if (item) contextMenu->exec(QCursor::pos());
 }
 
-void MasternodeList::StartAlias(std::string strAlias)
+void FrenchnodeList::StartAlias(std::string strAlias)
 {
     std::string strStatusHtml;
     strStatusHtml += "<center>Alias: " + strAlias;
 
-    BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+    BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
         if (mne.getAlias() == strAlias) {
             std::string strError;
-            CMasternodeBroadcast mnb;
+            CFrenchnodeBroadcast mnb;
 
-            bool fSuccess = CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb);
+            bool fSuccess = CFrenchnodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb);
 
             if (fSuccess) {
                 strStatusHtml += "<br>Successfully started masternode.";
-                mnodeman.UpdateMasternodeList(mnb);
+                mnodeman.UpdateFrenchnodeList(mnb);
                 mnb.Relay();
             } else {
                 strStatusHtml += "<br>Failed to start masternode.<br>Error: " + strError;
@@ -110,30 +110,30 @@ void MasternodeList::StartAlias(std::string strAlias)
     updateMyNodeList(true);
 }
 
-void MasternodeList::StartAll(std::string strCommand)
+void FrenchnodeList::StartAll(std::string strCommand)
 {
     int nCountSuccessful = 0;
     int nCountFailed = 0;
     std::string strFailedHtml;
 
-    BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+    BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
         std::string strError;
-        CMasternodeBroadcast mnb;
+        CFrenchnodeBroadcast mnb;
 
         int nIndex;
         if(!mne.castOutputIndex(nIndex))
             continue;
 
         CTxIn txin = CTxIn(uint256S(mne.getTxHash()), uint32_t(nIndex));
-        CMasternode* pmn = mnodeman.Find(txin);
+        CFrenchnode* pmn = mnodeman.Find(txin);
 
         if (strCommand == "start-missing" && pmn) continue;
 
-        bool fSuccess = CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb);
+        bool fSuccess = CFrenchnodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb);
 
         if (fSuccess) {
             nCountSuccessful++;
-            mnodeman.UpdateMasternodeList(mnb);
+            mnodeman.UpdateFrenchnodeList(mnb);
             mnb.Relay();
         } else {
             nCountFailed++;
@@ -155,14 +155,14 @@ void MasternodeList::StartAll(std::string strCommand)
     updateMyNodeList(true);
 }
 
-void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, CMasternode* pmn)
+void FrenchnodeList::updateMyFrenchnodeInfo(QString strAlias, QString strAddr, CFrenchnode* pmn)
 {
     LOCK(cs_mnlistupdate);
     bool fOldRowFound = false;
     int nNewRow = 0;
 
-    for (int i = 0; i < ui->tableWidgetMyMasternodes->rowCount(); i++) {
-        if (ui->tableWidgetMyMasternodes->item(i, 0)->text() == strAlias) {
+    for (int i = 0; i < ui->tableWidgetMyFrenchnodes->rowCount(); i++) {
+        if (ui->tableWidgetMyFrenchnodes->item(i, 0)->text() == strAlias) {
             fOldRowFound = true;
             nNewRow = i;
             break;
@@ -170,8 +170,8 @@ void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, C
     }
 
     if (nNewRow == 0 && !fOldRowFound) {
-        nNewRow = ui->tableWidgetMyMasternodes->rowCount();
-        ui->tableWidgetMyMasternodes->insertRow(nNewRow);
+        nNewRow = ui->tableWidgetMyFrenchnodes->rowCount();
+        ui->tableWidgetMyFrenchnodes->insertRow(nNewRow);
     }
 
     QTableWidgetItem* aliasItem = new QTableWidgetItem(strAlias);
@@ -182,54 +182,54 @@ void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, C
     QTableWidgetItem* lastSeenItem = new QTableWidgetItem(QString::fromStdString(DateTimeStrFormat("%Y-%m-%d %H:%M", pmn ? pmn->lastPing.sigTime : 0)));
     QTableWidgetItem* pubkeyItem = new QTableWidgetItem(QString::fromStdString(pmn ? CBitcoinAddress(pmn->pubKeyCollateralAddress.GetID()).ToString() : ""));
 
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 0, aliasItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 1, addrItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 2, protocolItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 3, statusItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 4, activeSecondsItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 5, lastSeenItem);
-    ui->tableWidgetMyMasternodes->setItem(nNewRow, 6, pubkeyItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 0, aliasItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 1, addrItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 2, protocolItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 3, statusItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 4, activeSecondsItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 5, lastSeenItem);
+    ui->tableWidgetMyFrenchnodes->setItem(nNewRow, 6, pubkeyItem);
 }
 
-void MasternodeList::updateMyNodeList(bool fForce)
+void FrenchnodeList::updateMyNodeList(bool fForce)
 {
     static int64_t nTimeMyListUpdated = 0;
 
-    // automatically update my masternode list only once in MY_MASTERNODELIST_UPDATE_SECONDS seconds,
+    // automatically update my masternode list only once in MY_FRENCHNODELIST_UPDATE_SECONDS seconds,
     // this update still can be triggered manually at any time via button click
-    int64_t nSecondsTillUpdate = nTimeMyListUpdated + MY_MASTERNODELIST_UPDATE_SECONDS - GetTime();
+    int64_t nSecondsTillUpdate = nTimeMyListUpdated + MY_FRENCHNODELIST_UPDATE_SECONDS - GetTime();
     ui->secondsLabel->setText(QString::number(nSecondsTillUpdate));
 
     if (nSecondsTillUpdate > 0 && !fForce) return;
     nTimeMyListUpdated = GetTime();
 
-    ui->tableWidgetMyMasternodes->setSortingEnabled(false);
-    BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+    ui->tableWidgetMyFrenchnodes->setSortingEnabled(false);
+    BOOST_FOREACH (CFrenchnodeConfig::CFrenchnodeEntry mne, masternodeConfig.getEntries()) {
         int nIndex;
         if(!mne.castOutputIndex(nIndex))
             continue;
 
         CTxIn txin = CTxIn(uint256S(mne.getTxHash()), uint32_t(nIndex));
-        CMasternode* pmn = mnodeman.Find(txin);
-        updateMyMasternodeInfo(QString::fromStdString(mne.getAlias()), QString::fromStdString(mne.getIp()), pmn);
+        CFrenchnode* pmn = mnodeman.Find(txin);
+        updateMyFrenchnodeInfo(QString::fromStdString(mne.getAlias()), QString::fromStdString(mne.getIp()), pmn);
     }
-    ui->tableWidgetMyMasternodes->setSortingEnabled(true);
+    ui->tableWidgetMyFrenchnodes->setSortingEnabled(true);
 
     // reset "timer"
     ui->secondsLabel->setText("0");
 }
 
-void MasternodeList::on_startButton_clicked()
+void FrenchnodeList::on_startButton_clicked()
 {
     // Find selected node alias
-    QItemSelectionModel* selectionModel = ui->tableWidgetMyMasternodes->selectionModel();
+    QItemSelectionModel* selectionModel = ui->tableWidgetMyFrenchnodes->selectionModel();
     QModelIndexList selected = selectionModel->selectedRows();
 
     if (selected.count() == 0) return;
 
     QModelIndex index = selected.at(0);
     int nSelectedRow = index.row();
-    std::string strAlias = ui->tableWidgetMyMasternodes->item(nSelectedRow, 0)->text().toStdString();
+    std::string strAlias = ui->tableWidgetMyFrenchnodes->item(nSelectedRow, 0)->text().toStdString();
 
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm masternode start"),
@@ -253,7 +253,7 @@ void MasternodeList::on_startButton_clicked()
     StartAlias(strAlias);
 }
 
-void MasternodeList::on_startAllButton_clicked()
+void FrenchnodeList::on_startAllButton_clicked()
 {
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm all masternodes start"),
@@ -277,9 +277,9 @@ void MasternodeList::on_startAllButton_clicked()
     StartAll();
 }
 
-void MasternodeList::on_startMissingButton_clicked()
+void FrenchnodeList::on_startMissingButton_clicked()
 {
-    if (!masternodeSync.IsMasternodeListSynced()) {
+    if (!masternodeSync.IsFrenchnodeListSynced()) {
         QMessageBox::critical(this, tr("Command is not available right now"),
             tr("You can't use this command until masternode list is synced"));
         return;
@@ -308,14 +308,14 @@ void MasternodeList::on_startMissingButton_clicked()
     StartAll("start-missing");
 }
 
-void MasternodeList::on_tableWidgetMyMasternodes_itemSelectionChanged()
+void FrenchnodeList::on_tableWidgetMyFrenchnodes_itemSelectionChanged()
 {
-    if (ui->tableWidgetMyMasternodes->selectedItems().count() > 0) {
+    if (ui->tableWidgetMyFrenchnodes->selectedItems().count() > 0) {
         ui->startButton->setEnabled(true);
     }
 }
 
-void MasternodeList::on_UpdateButton_clicked()
+void FrenchnodeList::on_UpdateButton_clicked()
 {
     updateMyNodeList(true);
 }

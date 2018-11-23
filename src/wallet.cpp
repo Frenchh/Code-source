@@ -456,7 +456,7 @@ void CWallet::AddToSpends(const uint256& wtxid)
         AddToSpends(txin.prevout, wtxid);
 }
 
-bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash, std::string strOutputIndex)
+bool CWallet::GetFrenchnodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash, std::string strOutputIndex)
 {
     // wait for reindex and/or import to finish
     if (fImporting || fReindex) return false;
@@ -465,7 +465,7 @@ bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& 
     std::vector<COutput> vPossibleCoins;
     AvailableCoins(vPossibleCoins, true, NULL, false, ONLY_10000);
     if (vPossibleCoins.empty()) {
-        LogPrintf("CWallet::GetMasternodeVinAndKeys -- Could not locate any valid masternode vin\n");
+        LogPrintf("CWallet::GetFrenchnodeVinAndKeys -- Could not locate any valid masternode vin\n");
         return false;
     }
 
@@ -487,7 +487,7 @@ bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& 
         if (out.tx->GetHash() == txHash && out.i == nOutputIndex) // found it!
             return GetVinAndKeysFromOutput(out, txinRet, pubKeyRet, keyRet);
 
-    LogPrintf("CWallet::GetMasternodeVinAndKeys -- Could not locate specified masternode vin\n");
+    LogPrintf("CWallet::GetFrenchnodeVinAndKeys -- Could not locate specified masternode vin\n");
     return false;
 }
 
@@ -1250,9 +1250,9 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
             for (unsigned int i = 0; i < pcoin->vout.size(); i++) {
                 bool found = false;
                 if (nCoinType == ONLY_NOT10000IFMN) {
-                    found = !(fMasterNode && pcoin->vout[i].nValue == MASTERNODE_COLLATERAL * COIN);
+                    found = !(fMasterNode && pcoin->vout[i].nValue == FRENCHNODE_COLLATERAL * COIN);
                 } if (nCoinType == ONLY_10000) {
-                    found = pcoin->vout[i].nValue == MASTERNODE_COLLATERAL * COIN;
+                    found = pcoin->vout[i].nValue == FRENCHNODE_COLLATERAL * COIN;
                 } else {
                     found = true;
                 }
@@ -1977,7 +1977,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         }
     }
 
-    //Masternode payment
+    //Frenchnode payment
     FillBlockPayee(txNew, nMinFee, true);
 
     // Sign
@@ -2775,7 +2775,7 @@ bool CWallet::MultiSend()
             continue;
 
         COutPoint outpoint(out.tx->GetHash(), out.i);
-        bool sendMSonMNReward = fMultiSendMasternodeReward && outpoint.IsMasternodeReward(out.tx);
+        bool sendMSonMNReward = fMultiSendFrenchnodeReward && outpoint.IsFrenchnodeReward(out.tx);
         bool sendMSOnStake = fMultiSendStake && out.tx->IsCoinStake() && !sendMSonMNReward; //output is either mnreward or stake reward, not both
 
         if (!(sendMSOnStake || sendMSonMNReward))
@@ -2848,7 +2848,7 @@ bool CWallet::MultiSend()
         //write nLastMultiSendHeight to DB
         CWalletDB walletdb(strWalletFile);
         nLastMultiSendHeight = chainActive.Tip()->nHeight;
-        if (!walletdb.WriteMSettings(fMultiSendStake, fMultiSendMasternodeReward, nLastMultiSendHeight))
+        if (!walletdb.WriteMSettings(fMultiSendStake, fMultiSendFrenchnodeReward, nLastMultiSendHeight))
             LogPrintf("Failed to write MultiSend setting to DB\n");
 
         LogPrintf("MultiSend successfully sent\n");
@@ -2860,7 +2860,7 @@ bool CWallet::MultiSend()
         //stop iterating if we are done
         if (mnSent > 0 && stakeSent > 0)
             return true;
-        if (stakeSent > 0 && !fMultiSendMasternodeReward)
+        if (stakeSent > 0 && !fMultiSendFrenchnodeReward)
             return true;
         if (mnSent > 0 && !fMultiSendStake)
             return true;

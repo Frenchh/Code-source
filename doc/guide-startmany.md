@@ -60,7 +60,7 @@ Close your QT Wallet.
 
 Just like setting up a standard MN. Send exactly 1,000 FRENCH to each new address created above.
 
-### Create New Masternode Private Keys
+### Create New Frenchnode Private Keys
 
 Open your QT Wallet and go to console (from the menu select Tools => Debug Console)
 

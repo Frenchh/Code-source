@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MASTERNODE_BUDGET_H
-#define MASTERNODE_BUDGET_H
+#ifndef FRENCHNODE_BUDGET_H
+#define FRENCHNODE_BUDGET_H
 
 #include "base58.h"
 #include "init.h"
@@ -65,7 +65,7 @@ public:
     CBudgetVote();
     CBudgetVote(CTxIn vin, uint256 nProposalHash, int nVoteIn);
 
-    bool Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode);
+    bool Sign(CKey& keyFrenchnode, CPubKey& pubKeyFrenchnode);
     bool SignatureValid(bool fSignatureCheck);
     void Relay();
 
@@ -117,7 +117,7 @@ public:
     CFinalizedBudgetVote();
     CFinalizedBudgetVote(CTxIn vinIn, uint256 nBudgetHashIn);
 
-    bool Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode);
+    bool Sign(CKey& keyFrenchnode, CPubKey& pubKeyFrenchnode);
     bool SignatureValid(bool fSignatureCheck);
     void Relay();
 
@@ -185,9 +185,9 @@ public:
     map<uint256, CBudgetProposal> mapProposals;
     map<uint256, CFinalizedBudget> mapFinalizedBudgets;
 
-    std::map<uint256, CBudgetProposalBroadcast> mapSeenMasternodeBudgetProposals;
-    std::map<uint256, CBudgetVote> mapSeenMasternodeBudgetVotes;
-    std::map<uint256, CBudgetVote> mapOrphanMasternodeBudgetVotes;
+    std::map<uint256, CBudgetProposalBroadcast> mapSeenFrenchnodeBudgetProposals;
+    std::map<uint256, CBudgetVote> mapSeenFrenchnodeBudgetVotes;
+    std::map<uint256, CBudgetVote> mapOrphanFrenchnodeBudgetVotes;
     std::map<uint256, CFinalizedBudgetBroadcast> mapSeenFinalizedBudgets;
     std::map<uint256, CFinalizedBudgetVote> mapSeenFinalizedBudgetVotes;
     std::map<uint256, CFinalizedBudgetVote> mapOrphanFinalizedBudgetVotes;
@@ -200,8 +200,8 @@ public:
 
     void ClearSeen()
     {
-        mapSeenMasternodeBudgetProposals.clear();
-        mapSeenMasternodeBudgetVotes.clear();
+        mapSeenFrenchnodeBudgetProposals.clear();
+        mapSeenFrenchnodeBudgetVotes.clear();
         mapSeenFinalizedBudgets.clear();
         mapSeenFinalizedBudgetVotes.clear();
     }
@@ -245,11 +245,11 @@ public:
         LogPrintf("Budget object cleared\n");
         mapProposals.clear();
         mapFinalizedBudgets.clear();
-        mapSeenMasternodeBudgetProposals.clear();
-        mapSeenMasternodeBudgetVotes.clear();
+        mapSeenFrenchnodeBudgetProposals.clear();
+        mapSeenFrenchnodeBudgetVotes.clear();
         mapSeenFinalizedBudgets.clear();
         mapSeenFinalizedBudgetVotes.clear();
-        mapOrphanMasternodeBudgetVotes.clear();
+        mapOrphanFrenchnodeBudgetVotes.clear();
         mapOrphanFinalizedBudgetVotes.clear();
     }
     void CheckAndRemove();
@@ -261,11 +261,11 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
-        READWRITE(mapSeenMasternodeBudgetProposals);
-        READWRITE(mapSeenMasternodeBudgetVotes);
+        READWRITE(mapSeenFrenchnodeBudgetProposals);
+        READWRITE(mapSeenFrenchnodeBudgetVotes);
         READWRITE(mapSeenFinalizedBudgets);
         READWRITE(mapSeenFinalizedBudgetVotes);
-        READWRITE(mapOrphanMasternodeBudgetVotes);
+        READWRITE(mapOrphanFrenchnodeBudgetVotes);
         READWRITE(mapOrphanFinalizedBudgetVotes);
 
         READWRITE(mapProposals);

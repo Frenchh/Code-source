@@ -124,8 +124,8 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     addWidget(explorerWindow);
 
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
-        masternodeListPage = new MasternodeList();
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
+        masternodeListPage = new FrenchnodeList();
         addWidget(masternodeListPage);
     }
 
@@ -176,7 +176,7 @@ void WalletView::setClientModel(ClientModel* clientModel)
     overviewPage->setClientModel(clientModel);
     sendCoinsPage->setClientModel(clientModel);
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         masternodeListPage->setClientModel(clientModel);
     }
 }
@@ -189,7 +189,7 @@ void WalletView::setWalletModel(WalletModel* walletModel)
     transactionView->setModel(walletModel);
     overviewPage->setWalletModel(walletModel);
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         masternodeListPage->setWalletModel(walletModel);
     }
     receiveCoinsPage->setModel(walletModel);
@@ -251,10 +251,10 @@ void WalletView::gotoBlockExplorerPage()
     setCurrentWidget(explorerWindow);
 }
 
-void WalletView::gotoMasternodePage()
+void WalletView::gotoFrenchnodePage()
 {
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowFrenchnodesTab").toBool()) {
         setCurrentWidget(masternodeListPage);
     }
 }

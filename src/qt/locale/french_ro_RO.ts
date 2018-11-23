@@ -88,7 +88,7 @@
     <name>Intro</name>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     </context>
 <context>
     <name>MultiSendDialog</name>

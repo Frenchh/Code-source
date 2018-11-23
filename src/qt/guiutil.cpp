@@ -368,7 +368,7 @@ void openConfigfile()
 
 void openMNConfigfile()
 {
-    boost::filesystem::path pathConfig = GetMasternodeConfigFile();
+    boost::filesystem::path pathConfig = GetFrenchnodeConfigFile();
 
     /* Open masternode.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))

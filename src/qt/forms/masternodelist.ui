@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MasternodeList</class>
- <widget class="QWidget" name="MasternodeList">
+ <class>FrenchnodeList</class>
+ <widget class="QWidget" name="FrenchnodeList">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -83,7 +83,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Masternodes</string>
+             <string>Frenchnodes</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -181,7 +181,7 @@
                  </layout>
                 </item>
                 <item>
-                 <widget class="QTableWidget" name="tableWidgetMyMasternodes">
+                 <widget class="QTableWidget" name="tableWidgetMyFrenchnodes">
                   <property name="minimumSize">
                    <size>
                     <width>695</width>

@@ -112,7 +112,7 @@ public:
         nTargetTimespan = 1 * 60; // French: 1 day
         nTargetSpacing = 1 * 60;  // French: 1 minute
         nMaturity = 10;
-        nMasternodeCountDrift = 20;
+        nFrenchnodeCountDrift = 20;
         nMaxMoneyOut = 4200000 * COIN;
 
         /** Height or Time Based Activations **/
@@ -171,8 +171,8 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "049611433516f3d1e2c1e401f0d1a1d6a95c15a53cb1afc9f984c044835ddad420bbf0993217dec44c452387a28fd57c97c57b46b4c3b8ca4bdcf5f35de878a98b";
-        strMasternodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
-        nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
+        strFrenchnodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
+        nStartFrenchnodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
@@ -208,7 +208,7 @@ public:
         nTargetSpacing = 2 * 60;  // French: 1 minute
         nLastPOWBlock = 400;
         nMaturity = 15;
-        nMasternodeCountDrift = 4;
+        nFrenchnodeCountDrift = 4;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 2000000 * COIN;
 
@@ -246,8 +246,8 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "0491fe8bb8da0d1a488cd14ce69d3b2b73552defd42fe2eca0704d5d00099f1793cbf46eb186ec714c7e964d9b8826d354345467d17e2fe814afaa50978a19ba40";
-        strMasternodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
-        nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
+        strFrenchnodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
+        nStartFrenchnodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
     }

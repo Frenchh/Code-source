@@ -412,7 +412,7 @@
     <name>Intro</name>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>Endereço</translation>
@@ -867,8 +867,8 @@
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes do blockchain através de -rescan na inicialização</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar todas as funcionacilidades específicas da French (Masternodes, SwiftTX, Budgeting) (0-1, default %u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar todas as funcionacilidades específicas da French (Frenchnodes, SwiftTX, Budgeting) (0-1, default %u)</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -915,12 +915,12 @@
         <translation>Carregando carteira...</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Nenhum Masternode detectado.</translation>
+        <source>No Frenchnodes detected.</source>
+        <translation>Nenhum Frenchnode detectado.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Nenhum Masternode compatível encontrado.</translation>
+        <source>No compatible Frenchnode found.</source>
+        <translation>Nenhum Frenchnode compatível encontrado.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -1119,8 +1119,8 @@
         <translation>Isso é destinado a ferramentas de teste de regressão e desenvolvimento de aplicativos.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Isto não e um Masternode</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>Isto não e um Frenchnode</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>

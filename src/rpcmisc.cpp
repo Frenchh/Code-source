@@ -130,21 +130,21 @@ UniValue mnsync(const UniValue& params, bool fHelp)
             "\nResult ('status' mode):\n"
             "{\n"
             "  \"IsBlockchainSynced\": true|false,    (boolean) 'true' if blockchain is synced\n"
-            "  \"lastMasternodeList\": xxxx,        (numeric) Timestamp of last MN list message\n"
-            "  \"lastMasternodeWinner\": xxxx,      (numeric) Timestamp of last MN winner message\n"
+            "  \"lastFrenchnodeList\": xxxx,        (numeric) Timestamp of last MN list message\n"
+            "  \"lastFrenchnodeWinner\": xxxx,      (numeric) Timestamp of last MN winner message\n"
             "  \"lastBudgetItem\": xxxx,            (numeric) Timestamp of last MN budget message\n"
             "  \"lastFailure\": xxxx,           (numeric) Timestamp of last failed sync\n"
             "  \"nCountFailures\": n,           (numeric) Number of failed syncs (total)\n"
-            "  \"sumMasternodeList\": n,        (numeric) Number of MN list messages (total)\n"
-            "  \"sumMasternodeWinner\": n,      (numeric) Number of MN winner messages (total)\n"
+            "  \"sumFrenchnodeList\": n,        (numeric) Number of MN list messages (total)\n"
+            "  \"sumFrenchnodeWinner\": n,      (numeric) Number of MN winner messages (total)\n"
             "  \"sumBudgetItemProp\": n,        (numeric) Number of MN budget messages (total)\n"
             "  \"sumBudgetItemFin\": n,         (numeric) Number of MN budget finalization messages (total)\n"
-            "  \"countMasternodeList\": n,      (numeric) Number of MN list messages (local)\n"
-            "  \"countMasternodeWinner\": n,    (numeric) Number of MN winner messages (local)\n"
+            "  \"countFrenchnodeList\": n,      (numeric) Number of MN list messages (local)\n"
+            "  \"countFrenchnodeWinner\": n,    (numeric) Number of MN winner messages (local)\n"
             "  \"countBudgetItemProp\": n,      (numeric) Number of MN budget messages (local)\n"
             "  \"countBudgetItemFin\": n,       (numeric) Number of MN budget finalization messages (local)\n"
-            "  \"RequestedMasternodeAssets\": n, (numeric) Status code of last sync phase\n"
-            "  \"RequestedMasternodeAttempt\": n, (numeric) Status code of last sync attempt\n"
+            "  \"RequestedFrenchnodeAssets\": n, (numeric) Status code of last sync phase\n"
+            "  \"RequestedFrenchnodeAttempt\": n, (numeric) Status code of last sync attempt\n"
             "}\n"
 
             "\nResult ('reset' mode):\n"
@@ -157,21 +157,21 @@ UniValue mnsync(const UniValue& params, bool fHelp)
         UniValue obj(UniValue::VOBJ);
 
         obj.push_back(Pair("IsBlockchainSynced", masternodeSync.IsBlockchainSynced()));
-        obj.push_back(Pair("lastMasternodeList", masternodeSync.lastMasternodeList));
-        obj.push_back(Pair("lastMasternodeWinner", masternodeSync.lastMasternodeWinner));
+        obj.push_back(Pair("lastFrenchnodeList", masternodeSync.lastFrenchnodeList));
+        obj.push_back(Pair("lastFrenchnodeWinner", masternodeSync.lastFrenchnodeWinner));
         obj.push_back(Pair("lastBudgetItem", masternodeSync.lastBudgetItem));
         obj.push_back(Pair("lastFailure", masternodeSync.lastFailure));
         obj.push_back(Pair("nCountFailures", masternodeSync.nCountFailures));
-        obj.push_back(Pair("sumMasternodeList", masternodeSync.sumMasternodeList));
-        obj.push_back(Pair("sumMasternodeWinner", masternodeSync.sumMasternodeWinner));
+        obj.push_back(Pair("sumFrenchnodeList", masternodeSync.sumFrenchnodeList));
+        obj.push_back(Pair("sumFrenchnodeWinner", masternodeSync.sumFrenchnodeWinner));
         obj.push_back(Pair("sumBudgetItemProp", masternodeSync.sumBudgetItemProp));
         obj.push_back(Pair("sumBudgetItemFin", masternodeSync.sumBudgetItemFin));
-        obj.push_back(Pair("countMasternodeList", masternodeSync.countMasternodeList));
-        obj.push_back(Pair("countMasternodeWinner", masternodeSync.countMasternodeWinner));
+        obj.push_back(Pair("countFrenchnodeList", masternodeSync.countFrenchnodeList));
+        obj.push_back(Pair("countFrenchnodeWinner", masternodeSync.countFrenchnodeWinner));
         obj.push_back(Pair("countBudgetItemProp", masternodeSync.countBudgetItemProp));
         obj.push_back(Pair("countBudgetItemFin", masternodeSync.countBudgetItemFin));
-        obj.push_back(Pair("RequestedMasternodeAssets", masternodeSync.RequestedMasternodeAssets));
-        obj.push_back(Pair("RequestedMasternodeAttempt", masternodeSync.RequestedMasternodeAttempt));
+        obj.push_back(Pair("RequestedFrenchnodeAssets", masternodeSync.RequestedFrenchnodeAssets));
+        obj.push_back(Pair("RequestedFrenchnodeAttempt", masternodeSync.RequestedFrenchnodeAttempt));
 
         return obj;
     }

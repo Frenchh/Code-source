@@ -606,7 +606,7 @@
         <translation>결제 요청 (QR 코드 및 french: URI 생성)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation>&amp;마스터노드</translation>
     </message>
     <message>
@@ -654,11 +654,11 @@
         <translation>지갑 &amp;구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>&amp;마스터노드 구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>마스터노드 구성 파일 열기</translation>
     </message>
     <message>
@@ -1236,13 +1236,13 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Form</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>나의 마스터노드</translation>
     </message>
     <message>
@@ -1435,7 +1435,7 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation>스테이크를 위한 전송</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
+        <source>Send For Frenchnode Rewards</source>
         <translation>마스터노드 보상 전송</translation>
     </message>
     <message>
@@ -1575,7 +1575,7 @@ Please check the address and try again.</source>
         <translation>첫 번째 하위 탭에서 모든 마스터 노드를 나열하는 추가 탭과&lt;br/&gt;두 번째 하위 탭에서 네트워크의 모든 마스터 노드를 표시하십시오.</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation>마스터노드 탭 표시</translation>
     </message>
     <message>
@@ -2041,7 +2041,7 @@ Please check the address and try again.</source>
         <translation>현재 데이터 디렉토리에서 French 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>마스터노드 개수</translation>
     </message>
     <message>
@@ -3243,7 +3243,7 @@ Please check the address and try again.</source>
         <translation>수신 됨</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>마스터노드 보상 </translation>
     </message>
     <message>
@@ -3358,7 +3358,7 @@ Please check the address and try again.</source>
         <translation>발행</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
+        <source>Frenchnode Reward</source>
         <translation>마스터노드 보상 </translation>
     </message>
     <message>
@@ -3569,7 +3569,7 @@ Please check the address and try again.</source>
         <translation>지갑의 모든 트랜잭션들을 삭제하고 오직 블록체인을 통한 트랜잭션 부분들만 복구합니다 -시작 시 다시 스캔</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation>French의 모든 특정 기능들을 비활성화합니다(마스터노드, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
     </message>
     <message>
@@ -3837,7 +3837,7 @@ rpcpassword=%s
         <translation>블록 생성 옵션:</translation>
     </message>
     <message>
-        <source>Can't find random Masternode.</source>
+        <source>Can't find random Frenchnode.</source>
         <translation>임의의 마스터노드를 찾을 수 없습니다.</translation>
     </message>
     <message>
@@ -3941,8 +3941,8 @@ rpcpassword=%s
         <translation>항목이 가득 찼습니다.</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Masternode에 연결하는 중 오류가 발생했습니다.</translation>
+        <source>Error connecting to Frenchnode.</source>
+        <translation>Frenchnode에 연결하는 중 오류가 발생했습니다.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -4241,15 +4241,15 @@ rpcpassword=%s
         <translation>최대 &lt;n&gt; 연결을 피어들과 유지합니다. (기본값: %u)</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
+        <source>Frenchnode options:</source>
         <translation>마스터노드 옵션:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
+        <source>Frenchnode queue is full.</source>
         <translation>마스터노드 대기열이 가득 찼습니다.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
+        <source>Frenchnode:</source>
         <translation>마스터노드:</translation>
     </message>
     <message>
@@ -4269,11 +4269,11 @@ rpcpassword=%s
         <translation>-whitebind: '%s' 의 포트를 지정해야 합니다</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
+        <source>No Frenchnodes detected.</source>
         <translation>마스터노드가 발견되지 않았습니다.</translation>
     </message>
     <message>
-        <source>No compatible Masternode found.</source>
+        <source>No compatible Frenchnode found.</source>
         <translation>호환되는 마스터노드가 발견되지 않았습니다.</translation>
     </message>
     <message>
@@ -4293,7 +4293,7 @@ rpcpassword=%s
         <translation>사용 가능한 파일 디스크립터가 충분하지 않습니다.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
+        <source>Not in the Frenchnode list.</source>
         <translation>마스터노드 목록에 없습니다.</translation>
     </message>
     <message>
@@ -4545,7 +4545,7 @@ rpcpassword=%s
         <translation>이것은 리그레션 테스팅 및 앱 개발을 위해 만들어졌습니다.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
+        <source>This is not a Frenchnode.</source>
         <translation>마스터노드가 아닙니다.</translation>
     </message>
     <message>

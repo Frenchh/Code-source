@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MASTERNODEMAN_H
-#define MASTERNODEMAN_H
+#ifndef FRENCHNODEMAN_H
+#define FRENCHNODEMAN_H
 
 #include "base58.h"
 #include "key.h"
@@ -14,19 +14,19 @@
 #include "sync.h"
 #include "util.h"
 
-#define MASTERNODES_DUMP_SECONDS (15 * 60)
-#define MASTERNODES_DSEG_SECONDS (3 * 60 * 60)
+#define FRENCHNODES_DUMP_SECONDS (15 * 60)
+#define FRENCHNODES_DSEG_SECONDS (3 * 60 * 60)
 
 using namespace std;
 
-class CMasternodeMan;
+class CFrenchnodeMan;
 
-extern CMasternodeMan mnodeman;
-void DumpMasternodes();
+extern CFrenchnodeMan mnodeman;
+void DumpFrenchnodes();
 
 /** Access to the MN database (mncache.dat)
  */
-class CMasternodeDB
+class CFrenchnodeDB
 {
 private:
     boost::filesystem::path pathMN;
@@ -43,12 +43,12 @@ public:
         IncorrectFormat
     };
 
-    CMasternodeDB();
-    bool Write(const CMasternodeMan& mnodemanToSave);
-    ReadResult Read(CMasternodeMan& mnodemanToLoad, bool fDryRun = false);
+    CFrenchnodeDB();
+    bool Write(const CFrenchnodeMan& mnodemanToSave);
+    ReadResult Read(CFrenchnodeMan& mnodemanToLoad, bool fDryRun = false);
 };
 
-class CMasternodeMan
+class CFrenchnodeMan
 {
 private:
     // critical section to protect the inner data structures
@@ -58,19 +58,19 @@ private:
     mutable CCriticalSection cs_process_message;
 
     // map to hold all MNs
-    std::vector<CMasternode> vMasternodes;
-    // who's asked for the Masternode list and the last time
-    std::map<CNetAddr, int64_t> mAskedUsForMasternodeList;
-    // who we asked for the Masternode list and the last time
-    std::map<CNetAddr, int64_t> mWeAskedForMasternodeList;
-    // which Masternodes we've asked for
-    std::map<COutPoint, int64_t> mWeAskedForMasternodeListEntry;
+    std::vector<CFrenchnode> vFrenchnodes;
+    // who's asked for the Frenchnode list and the last time
+    std::map<CNetAddr, int64_t> mAskedUsForFrenchnodeList;
+    // who we asked for the Frenchnode list and the last time
+    std::map<CNetAddr, int64_t> mWeAskedForFrenchnodeList;
+    // which Frenchnodes we've asked for
+    std::map<COutPoint, int64_t> mWeAskedForFrenchnodeListEntry;
 
 public:
     // Keep track of all broadcasts I've seen
-    map<uint256, CMasternodeBroadcast> mapSeenMasternodeBroadcast;
+    map<uint256, CFrenchnodeBroadcast> mapSeenFrenchnodeBroadcast;
     // Keep track of all pings I've seen
-    map<uint256, CMasternodePing> mapSeenMasternodePing;
+    map<uint256, CFrenchnodePing> mapSeenFrenchnodePing;
 
     ADD_SERIALIZE_METHODS;
 
@@ -78,31 +78,31 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
         LOCK(cs);
-        READWRITE(vMasternodes);
-        READWRITE(mAskedUsForMasternodeList);
-        READWRITE(mWeAskedForMasternodeList);
-        READWRITE(mWeAskedForMasternodeListEntry);
+        READWRITE(vFrenchnodes);
+        READWRITE(mAskedUsForFrenchnodeList);
+        READWRITE(mWeAskedForFrenchnodeList);
+        READWRITE(mWeAskedForFrenchnodeListEntry);
 
-        READWRITE(mapSeenMasternodeBroadcast);
-        READWRITE(mapSeenMasternodePing);
+        READWRITE(mapSeenFrenchnodeBroadcast);
+        READWRITE(mapSeenFrenchnodePing);
     }
 
-    CMasternodeMan();
-    CMasternodeMan(CMasternodeMan& other);
+    CFrenchnodeMan();
+    CFrenchnodeMan(CFrenchnodeMan& other);
 
     /// Add an entry
-    bool Add(CMasternode& mn);
+    bool Add(CFrenchnode& mn);
 
     /// Ask (source) node for mnb
     void AskForMN(CNode* pnode, CTxIn& vin);
 
-    /// Check all Masternodes
+    /// Check all Frenchnodes
     void Check();
 
-    /// Check all Masternodes and remove inactive
+    /// Check all Frenchnodes and remove inactive
     void CheckAndRemove(bool forceExpiredRemoval = false);
 
-    /// Clear Masternode vector
+    /// Clear Frenchnode vector
     void Clear();
 
     int CountEnabled(int protocolVersion = -1);
@@ -112,45 +112,45 @@ public:
     void DsegUpdate(CNode* pnode);
 
     /// Find an entry
-    CMasternode* Find(const CScript& payee);
-    CMasternode* Find(const CTxIn& vin);
-    CMasternode* Find(const CPubKey& pubKeyMasternode);
+    CFrenchnode* Find(const CScript& payee);
+    CFrenchnode* Find(const CTxIn& vin);
+    CFrenchnode* Find(const CPubKey& pubKeyFrenchnode);
 
     /// Find an entry in the masternode list that is next to be paid
-    CMasternode* GetNextMasternodeInQueueForPayment(int nBlockHeight, bool fFilterSigTime, int& nCount);
+    CFrenchnode* GetNextFrenchnodeInQueueForPayment(int nBlockHeight, bool fFilterSigTime, int& nCount);
 
     /// Find a random entry
-    CMasternode* FindRandomNotInVec(std::vector<CTxIn>& vecToExclude, int protocolVersion = -1);
+    CFrenchnode* FindRandomNotInVec(std::vector<CTxIn>& vecToExclude, int protocolVersion = -1);
 
     /// Get the current winner for this block
-    CMasternode* GetCurrentMasterNode(int mod = 1, int64_t nBlockHeight = 0, int minProtocol = 0);
+    CFrenchnode* GetCurrentMasterNode(int mod = 1, int64_t nBlockHeight = 0, int minProtocol = 0);
 
-    std::vector<CMasternode> GetFullMasternodeVector()
+    std::vector<CFrenchnode> GetFullFrenchnodeVector()
     {
         Check();
-        return vMasternodes;
+        return vFrenchnodes;
     }
 
-    std::vector<pair<int, CMasternode> > GetMasternodeRanks(int64_t nBlockHeight, int minProtocol = 0);
-    int GetMasternodeRank(const CTxIn& vin, int64_t nBlockHeight, int minProtocol = 0, bool fOnlyActive = true);
-    CMasternode* GetMasternodeByRank(int nRank, int64_t nBlockHeight, int minProtocol = 0, bool fOnlyActive = true);
+    std::vector<pair<int, CFrenchnode> > GetFrenchnodeRanks(int64_t nBlockHeight, int minProtocol = 0);
+    int GetFrenchnodeRank(const CTxIn& vin, int64_t nBlockHeight, int minProtocol = 0, bool fOnlyActive = true);
+    CFrenchnode* GetFrenchnodeByRank(int nRank, int64_t nBlockHeight, int minProtocol = 0, bool fOnlyActive = true);
 
-    void ProcessMasternodeConnections();
+    void ProcessFrenchnodeConnections();
 
     void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
-    /// Return the number of (unique) Masternodes
-    int size() { return vMasternodes.size(); }
+    /// Return the number of (unique) Frenchnodes
+    int size() { return vFrenchnodes.size(); }
 
-    /// Return the number of Masternodes older than (default) 8000 seconds
+    /// Return the number of Frenchnodes older than (default) 8000 seconds
     int stable_size ();
 
     std::string ToString() const;
 
     void Remove(CTxIn vin);
 
-    /// Update masternode list and maps using provided CMasternodeBroadcast
-    void UpdateMasternodeList(CMasternodeBroadcast mnb);
+    /// Update masternode list and maps using provided CFrenchnodeBroadcast
+    void UpdateFrenchnodeList(CFrenchnodeBroadcast mnb);
 };
 
 #endif

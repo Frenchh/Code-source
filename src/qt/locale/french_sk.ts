@@ -606,8 +606,8 @@
         <translation>Vyžiadať platby (generuje QR kódy a french: identifikátory URI)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -654,11 +654,11 @@
         <translation>Otvoriť konfiguračný súbor peňaženky</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>Otvoriť konfiguračný súbor masternodu</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>Otvoriť konfiguračný súbor masternodu</translation>
     </message>
     <message>
@@ -916,7 +916,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Address</source>
         <translation>Adresa</translation>

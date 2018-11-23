@@ -42,7 +42,7 @@ public:
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
-        ShowMasternodesTab,  // bool
+        ShowFrenchnodesTab,  // bool
         Listen,              // bool
         StakeSplitThreshold, // int
         OptionIDRowCount,

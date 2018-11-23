@@ -81,9 +81,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="multiSendMasternodeCheckBox">
+          <widget class="QCheckBox" name="multiSendFrenchnodeCheckBox">
            <property name="text">
-            <string>Send For Masternode Rewards</string>
+            <string>Send For Frenchnode Rewards</string>
            </property>
           </widget>
          </item>

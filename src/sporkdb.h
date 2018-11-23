@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FRENCHGREEN_CSPORKDB_H
-#define FRENCHGREEN_CSPORKDB_H
+#ifndef FRENCH_CSPORKDB_H
+#define FRENCH_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //FRENCHGREEN_CSPORKDB_H
+#endif //FRENCH_CSPORKDB_H

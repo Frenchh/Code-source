@@ -193,7 +193,7 @@ public:
     //MultiSend
     std::vector<std::pair<std::string, int> > vMultiSend;
     bool fMultiSendStake;
-    bool fMultiSendMasternodeReward;
+    bool fMultiSendFrenchnodeReward;
     bool fMultiSendNotify;
     std::string strMultiSendChangeAddress;
     int nLastMultiSendHeight;
@@ -243,7 +243,7 @@ public:
         //MultiSend
         vMultiSend.clear();
         fMultiSendStake = false;
-        fMultiSendMasternodeReward = false;
+        fMultiSendFrenchnodeReward = false;
         fMultiSendNotify = false;
         strMultiSendChangeAddress = "";
         nLastMultiSendHeight = 0;
@@ -256,12 +256,12 @@ public:
 
     bool isMultiSendEnabled()
     {
-        return fMultiSendMasternodeReward || fMultiSendStake;
+        return fMultiSendFrenchnodeReward || fMultiSendStake;
     }
 
     void setMultiSendDisabled()
     {
-        fMultiSendMasternodeReward = false;
+        fMultiSendFrenchnodeReward = false;
         fMultiSendStake = false;
     }
 
@@ -291,8 +291,8 @@ public:
     std::map<CBitcoinAddress, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
     bool SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int nConfTheirs, std::vector<COutput> vCoins, std::set<std::pair<const CWalletTx*, unsigned int> >& setCoinsRet, CAmount& nValueRet) const;
 
-    /// Get 1000DASH output and keys which can be used for the Masternode
-    bool GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
+    /// Get 1000DASH output and keys which can be used for the Frenchnode
+    bool GetFrenchnodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
     /// Extract txin information and keys from output
     bool GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet);
 

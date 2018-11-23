@@ -606,7 +606,7 @@
         <translation>Vyžádat platbu (generování QK kódu a french: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation>&amp;Masternody</translation>
     </message>
     <message>
@@ -654,11 +654,11 @@
         <translation>Otevřít Pěněženkový &amp;Konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>Otevřít &amp;Masternodový Konfigurační Soubor</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>Otevřít Masternodový konfigurační soubor</translation>
     </message>
     <message>
@@ -1184,13 +1184,13 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Od</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>Moje Masternody</translation>
     </message>
     <message>
@@ -1365,7 +1365,7 @@ MultiSend: %1</translation>
         <translation>Poslat pro sázky - stake</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
+        <source>Send For Frenchnode Rewards</source>
         <translation>Poslat pro odměny masternodů</translation>
     </message>
     <message>
@@ -1473,7 +1473,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>&amp;Spusti French při přihlášení do systému</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
+        <source>Show Frenchnodes Tab</source>
         <translation>Zobrazit záložku Masternodů</translation>
     </message>
     <message>
@@ -1679,7 +1679,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
+        <source>Number of Frenchnodes</source>
         <translation>Počet Masternodů</translation>
     </message>
     <message>
@@ -2281,8 +2281,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Toto je experimentální software.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Toto není Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>Toto není Frenchnode.</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>

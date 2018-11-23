@@ -606,7 +606,7 @@
         <translation>请求支付（生成二维码和french：URIs）</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
+        <source>&amp;Frenchnodes</source>
         <translation>&amp;主节点</translation>
     </message>
     <message>
@@ -654,11 +654,11 @@
         <translation>打开钱包&amp;配置文件</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>打开&amp;主节点配置文件</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>打开主节点配置文件</translation>
     </message>
     <message>
@@ -824,7 +824,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>来自</translation>

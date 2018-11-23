@@ -1,4 +1,4 @@
-Masternode Budget API
+Frenchnode Budget API
 =======================
 
 French now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.

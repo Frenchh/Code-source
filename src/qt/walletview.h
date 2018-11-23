@@ -64,7 +64,7 @@ private:
     ReceiveCoinsDialog* receiveCoinsPage;
     SendCoinsDialog* sendCoinsPage;
     BlockExplorer* explorerWindow;
-    MasternodeList* masternodeListPage;
+    FrenchnodeList* masternodeListPage;
 
     TransactionView* transactionView;
 
@@ -77,7 +77,7 @@ public slots:
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to masternode page */
-    void gotoMasternodePage();
+    void gotoFrenchnodePage();
     /** Switch to explorer page */
     void gotoBlockExplorerPage();
     /** Switch to receive coins page */

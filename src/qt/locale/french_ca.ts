@@ -370,11 +370,11 @@
         <translation>Obre el fitxer de &amp;configuració del moneder</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open &amp;Frenchnode Configuration File</source>
         <translation>Obre el fitxer de &amp;configuració del Node Mestre</translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
+        <source>Open Frenchnode configuration file</source>
         <translation>Obre el fitxer de configuració del Node Mestre</translation>
     </message>
     <message>
@@ -588,9 +588,9 @@
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
-        <source>My Masternodes</source>
+        <source>My Frenchnodes</source>
         <translation>Els meus Nodes Mestre</translation>
     </message>
     <message>

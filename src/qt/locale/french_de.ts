@@ -614,12 +614,12 @@
         <translation>&amp;Privatsphäre</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>Masternodes durchsuchen</translation>
+        <translation>Frenchnodes durchsuchen</translation>
     </message>
     <message>
         <source>&amp;About French Core</source>
@@ -658,12 +658,12 @@
         <translation>Öffne Wallet &amp;Einstellungsdatei </translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Öffne &amp;Masternode Einstellungsdatei </translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Öffne &amp;Frenchnode Einstellungsdatei </translation>
     </message>
     <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Öffne Masternode Einstellungsdatei</translation>
+        <source>Open Frenchnode configuration file</source>
+        <translation>Öffne Frenchnode Einstellungsdatei</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -1267,18 +1267,18 @@ Adresse: %4</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Formular</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Meine Masternodes</translation>
+        <source>My Frenchnodes</source>
+        <translation>Meine Frenchnodes</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Achtung: Der Status Ihrer Masternodes kann in der lokalen Wallet leicht inkorrekt sein. &lt;br /&gt;Warten Sie immer bis die Wallet vollständig synchronisiert ist und überprüfen Sie von einer anderen Installation aus&lt;br /&gt;, sollte Ihre Masternode immer noch als "MISSING" angezeigt werden.</translation>
+        <translation>Achtung: Der Status Ihrer Frenchnodes kann in der lokalen Wallet leicht inkorrekt sein. &lt;br /&gt;Warten Sie immer bis die Wallet vollständig synchronisiert ist und überprüfen Sie von einer anderen Installation aus&lt;br /&gt;, sollte Ihre Frenchnode immer noch als "MISSING" angezeigt werden.</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1338,19 +1338,19 @@ Adresse: %4</translation>
     </message>
     <message>
         <source>Confirm masternode start</source>
-        <translation>Masternode start bestätigen</translation>
+        <translation>Frenchnode start bestätigen</translation>
     </message>
     <message>
         <source>Are you sure you want to start masternode %1?</source>
-        <translation>Sind Sie sicher, dass Sie den Masternode %1 starten wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie den Frenchnode %1 starten wollen?</translation>
     </message>
     <message>
         <source>Confirm all masternodes start</source>
-        <translation>Start aller Masternodes bestätigen</translation>
+        <translation>Start aller Frenchnodes bestätigen</translation>
     </message>
     <message>
         <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Sind Sie sicher, dass Sie alle Masternodes starten wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie alle Frenchnodes starten wollen?</translation>
     </message>
     <message>
         <source>Command is not available right now</source>
@@ -1358,15 +1358,15 @@ Adresse: %4</translation>
     </message>
     <message>
         <source>You can't use this command until masternode list is synced</source>
-        <translation>Sie können diesen Befehlt nicht ausführen, bevor der Masternode synchronisiert ist</translation>
+        <translation>Sie können diesen Befehlt nicht ausführen, bevor der Frenchnode synchronisiert ist</translation>
     </message>
     <message>
         <source>Confirm missing masternodes start</source>
-        <translation>Start fehlender Masternodes bestätigen</translation>
+        <translation>Start fehlender Frenchnodes bestätigen</translation>
     </message>
     <message>
         <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Sind Sie sicher, dass Sie alle fehlenden Masternodes starten wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie alle fehlenden Frenchnodes starten wollen?</translation>
     </message>
 </context>
 <context>
@@ -1388,7 +1388,7 @@ Adresse: %4</translation>
 To Add: enter percentage to give and FRENCH address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ermöglicht es automatisch bis zu 100% Ihrer Stake- oder Masternode-Belohnung zu einer Liste von anderen FRENCH-Adressen zu senden.
+        <translation>MultiSend ermöglicht es automatisch bis zu 100% Ihrer Stake- oder Frenchnode-Belohnung zu einer Liste von anderen FRENCH-Adressen zu senden.
 Zum hinzufügen: Gebe den Prozentsätze ein, um die FRENCH-Adressen des MultiSend-Vektor hinzuzufügen.
 Zum entfernen: Gebe die zu löschende Adresse ein und drücke löschen.
 MultiSend wird nicht aktiviert bis Sie auf Aktivieren geklickt haben.</translation>
@@ -1462,8 +1462,8 @@ MultiSend wird nicht aktiviert bis Sie auf Aktivieren geklickt haben.</translati
         <translation>For Staker versenden</translation>
     </message>
     <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Für Masternode Rewards versenden</translation>
+        <source>Send For Frenchnode Rewards</source>
+        <translation>Für Frenchnode Rewards versenden</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1599,11 +1599,11 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation>Zeige zusätzlichen Tab, der alle ihre Masternodes anzeigt, im ersten Untertab&lt;br/&gt;und alle Masternodes im Netzwerk im zweiten Untertab.</translation>
+        <translation>Zeige zusätzlichen Tab, der alle ihre Frenchnodes anzeigt, im ersten Untertab&lt;br/&gt;und alle Frenchnodes im Netzwerk im zweiten Untertab.</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Masternodes Tab anzeigen</translation>
+        <source>Show Frenchnodes Tab</source>
+        <translation>Frenchnodes Tab anzeigen</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -2084,8 +2084,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Öffne French-Debug-Protokolldatei aus dem aktuellen Datenverzeichnis. Dies kann für einige Protokolldateien einige Sekunden dauern.</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
-        <translation>Anzahl der Masternodes</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Anzahl der Frenchnodes</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -3308,8 +3308,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Empfangen über</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode Vergütung</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnode Vergütung</translation>
     </message>
     <message>
         <source>Received from</source>
@@ -3423,8 +3423,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Erzeugt</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode Vergütung</translation>
+        <source>Frenchnode Reward</source>
+        <translation>Frenchnode Vergütung</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3614,8 +3614,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Lösche alle Wallet-Transaktionen und stelle nur diese Teile der Blockchain wieder her durch -neuscan beim Start</translation>
     </message>
     <message>
-        <source>Disable all French specific functionality (Masternodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Deaktiviere alle French-spezifischen Funktionen (Masternodes, SwiftTX, Budgetplanung) (0-1, default: %u)</translation>
+        <source>Disable all French specific functionality (Frenchnodes, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Deaktiviere alle French-spezifischen Funktionen (Frenchnodes, SwiftTX, Budgetplanung) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3834,16 +3834,16 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Lade Wallet...</translation>
     </message>
     <message>
-        <source>Masternode options:</source>
-        <translation>Masternode-Optionen:</translation>
+        <source>Frenchnode options:</source>
+        <translation>Frenchnode-Optionen:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode-Schlange ist voll.</translation>
+        <source>Frenchnode queue is full.</source>
+        <translation>Frenchnode-Schlange ist voll.</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
+        <source>Frenchnode:</source>
+        <translation>Frenchnode:</translation>
     </message>
     <message>
         <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
@@ -3875,7 +3875,7 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
     </message>
     <message>
         <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Bezeichne Masternode-Konfigurationsdatei (default: %s)</translation>
+        <translation>Bezeichne Frenchnode-Konfigurationsdatei (default: %s)</translation>
     </message>
     <message>
         <source>Specify pid file (default: %s)</source>
@@ -3899,15 +3899,15 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
     </message>
     <message>
         <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Folgende Einträge zum Masternode eingereicht: %u / %d</translation>
+        <translation>Folgende Einträge zum Frenchnode eingereicht: %u / %d</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Eingereicht zum Masternode, wartet auf mehr Einträge ( %u / %d ) %s</translation>
+        <translation>Eingereicht zum Frenchnode, wartet auf mehr Einträge ( %u / %d ) %s</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Eingereicht zum Masternode, wartet in der Schlange %s</translation>
+        <translation>Eingereicht zum Frenchnode, wartet in der Schlange %s</translation>
     </message>
     <message>
         <source>SwiftTX options:</source>
@@ -3931,11 +3931,11 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
     </message>
     <message>
         <source>Synchronizing masternode winners...</source>
-        <translation>Synchronisiere ausgewählte Masternodes....</translation>
+        <translation>Synchronisiere ausgewählte Frenchnodes....</translation>
     </message>
     <message>
         <source>Synchronizing masternodes...</source>
-        <translation>Synchronisiere Masternodes....</translation>
+        <translation>Synchronisiere Frenchnodes....</translation>
     </message>
     <message>
         <source>Synchronizing sporks...</source>
@@ -3954,8 +3954,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Dies ist für Regressionstest-Tools und Anwendungsentwicklung gedacht.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dies ist keine Masternode.</translation>
+        <source>This is not a Frenchnode.</source>
+        <translation>Dies ist keine Frenchnode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>

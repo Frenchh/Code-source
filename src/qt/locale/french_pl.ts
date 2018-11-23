@@ -526,8 +526,8 @@
         <translation>Zarządaj płatności (generuje kod QR i french:URI)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>&amp;Frenchnodes</source>
+        <translation>&amp;Frenchnodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -574,8 +574,8 @@
         <translation>Otwórz portfel &amp;Plik Konfiguracji</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Otwórz &amp;Plik konfiguracji Masternode</translation>
+        <source>Open &amp;Frenchnode Configuration File</source>
+        <translation>Otwórz &amp;Plik konfiguracji Frenchnode</translation>
     </message>
     <message>
         <source>Open a french: URI or payment request</source>
@@ -932,14 +932,14 @@ MultiWysyłlka: %1</translation>
     </message>
     </context>
 <context>
-    <name>MasternodeList</name>
+    <name>FrenchnodeList</name>
     <message>
         <source>Form</source>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Moje Masternode</translation>
+        <source>My Frenchnodes</source>
+        <translation>Moje Frenchnode</translation>
     </message>
     <message>
         <source>Address</source>
@@ -995,19 +995,19 @@ MultiWysyłlka: %1</translation>
     </message>
     <message>
         <source>Confirm masternode start</source>
-        <translation>Potwierdź rozpoczęcie Masternode</translation>
+        <translation>Potwierdź rozpoczęcie Frenchnode</translation>
     </message>
     <message>
         <source>Are you sure you want to start masternode %1?</source>
-        <translation>Czy jesteś pewien, że chcesz wystartować Masternode %1?</translation>
+        <translation>Czy jesteś pewien, że chcesz wystartować Frenchnode %1?</translation>
     </message>
     <message>
         <source>Confirm all masternodes start</source>
-        <translation>Potwierdź start wszystkich Masternode</translation>
+        <translation>Potwierdź start wszystkich Frenchnode</translation>
     </message>
     <message>
         <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Czy jesteś pewien, że chcesz wystartować wszystkie Masternode?</translation>
+        <translation>Czy jesteś pewien, że chcesz wystartować wszystkie Frenchnode?</translation>
     </message>
     <message>
         <source>Command is not available right now</source>
@@ -1177,8 +1177,8 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>Włącz cechy kontroli monety</translation>
     </message>
     <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Pokaż Masternode Tab</translation>
+        <source>Show Frenchnodes Tab</source>
+        <translation>Pokaż Frenchnode Tab</translation>
     </message>
     <message>
         <source>&amp;Network</source>
@@ -1491,8 +1491,8 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>Łańcuch bloków</translation>
     </message>
     <message>
-        <source>Number of Masternodes</source>
-        <translation>Liczba Masternode</translation>
+        <source>Number of Frenchnodes</source>
+        <translation>Liczba Frenchnode</translation>
     </message>
     <message>
         <source>&amp;Console</source>
