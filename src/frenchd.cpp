@@ -44,7 +44,7 @@ void DetectShutdownThread(boost::thread_group* threadGroup)
     bool fShutdown = ShutdownRequested();
     // Tell the main threads to shutdown.
     while (!fShutdown) {
-        MilliSleep(100);
+        MilliSleep(200);
         fShutdown = ShutdownRequested();
     }
     if (threadGroup) {
