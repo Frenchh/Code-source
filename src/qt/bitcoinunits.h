@@ -4,8 +4,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_BITCOINUNITS_H
-#define BITCOIN_QT_BITCOINUNITS_H
+#ifndef FRENCH_QT_FRENCHUNITS_H
+#define FRENCH_QT_FRENCHUNITS_H
 
 #include "amount.h"
 
@@ -130,4 +130,4 @@ private:
 };
 typedef BitcoinUnits::Unit BitcoinUnit;
 
-#endif // BITCOIN_QT_BITCOINUNITS_H
+#endif // FRENCH_QT_FRENCHUNITS_H

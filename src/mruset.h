@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MRUSET_H
-#define BITCOIN_MRUSET_H
+#ifndef FRENCH_MRUSET_H
+#define FRENCH_MRUSET_H
 
 #include <deque>
 #include <set>
@@ -66,4 +66,4 @@ public:
     }
 };
 
-#endif // BITCOIN_MRUSET_H
+#endif // FRENCH_MRUSET_H

@@ -2,8 +2,8 @@
 // Copyright (c) 2015-2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_KERNEL_H
-#define BITCOIN_KERNEL_H
+#ifndef FRENCH_KERNEL_H
+#define FRENCH_KERNEL_H
 
 #include "main.h"
 
@@ -43,4 +43,4 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
 // Get time weight using supplied timestamps
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd);
 
-#endif // BITCOIN_KERNEL_H
+#endif // FRENCH_KERNEL_H

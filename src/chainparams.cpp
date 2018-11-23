@@ -113,7 +113,7 @@ public:
         nTargetSpacing = 1 * 60;  // French: 1 minute
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 42000000 * COIN;
+        nMaxMoneyOut = 4200000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 400;

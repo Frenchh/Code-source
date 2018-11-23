@@ -3,33 +3,33 @@
 # backward compatibility for existing gentoo layout
 #
 if [ -d "/var/lib/french/.french" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/french/.french"
+	FRENCHD_DEFAULT_DATADIR="/var/lib/french/.french"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/frenchd"
+	FRENCHD_DEFAULT_DATADIR="/var/lib/frenchd"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/french/french.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/frenchd}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/frenchd.pid}
-BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-french}
-BITCOIND_GROUP=${BITCOIND_GROUP:-french}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/frenchd}
+FRENCHD_CONFIGFILE=${FRENCHD_CONFIGFILE:-/etc/french/french.conf}
+FRENCHD_PIDDIR=${FRENCHD_PIDDIR:-/var/run/frenchd}
+FRENCHD_PIDFILE=${FRENCHD_PIDFILE:-${FRENCHD_PIDDIR}/frenchd.pid}
+FRENCHD_DATADIR=${FRENCHD_DATADIR:-${FRENCHD_DEFAULT_DATADIR}}
+FRENCHD_USER=${FRENCHD_USER:-french}
+FRENCHD_GROUP=${FRENCHD_GROUP:-french}
+FRENCHD_BIN=${FRENCHD_BIN:-/usr/bin/frenchd}
 
 name="French Core Daemon"
 description="French crypto-currency p2p network daemon"
 
 command="/usr/bin/frenchd"
-command_args="-pid=\"${BITCOIND_PIDFILE}\" \
-		-conf=\"${BITCOIND_CONFIGFILE}\" \
-		-datadir=\"${BITCOIND_DATADIR}\" \
+command_args="-pid=\"${FRENCHD_PIDFILE}\" \
+		-conf=\"${FRENCHD_CONFIGFILE}\" \
+		-datadir=\"${FRENCHD_DATADIR}\" \
 		-daemon \
-		${BITCOIND_OPTS}"
+		${FRENCHD_OPTS}"
 
-required_files="${BITCOIND_CONFIGFILE}"
-start_stop_daemon_args="-u ${BITCOIND_USER} \
-			-N ${BITCOIND_NICE:-0} -w 2000"
-pidfile="${BITCOIND_PIDFILE}"
+required_files="${FRENCHD_CONFIGFILE}"
+start_stop_daemon_args="-u ${FRENCHD_USER} \
+			-N ${FRENCHD_NICE:-0} -w 2000"
+pidfile="${FRENCHD_PIDFILE}"
 retry=60
 
 depend() {
@@ -44,29 +44,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${BITCOIND_USER}:${BITCOIND_GROUP}" \
-	"${BITCOIND_DATADIR}"
+	--owner "${FRENCHD_USER}:${FRENCHD_GROUP}" \
+	"${FRENCHD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${BITCOIND_USER}:${BITCOIND_GROUP}" \
-	"${BITCOIND_PIDDIR}"
+	--owner "${FRENCHD_USER}:${FRENCHD_GROUP}" \
+	"${FRENCHD_PIDDIR}"
 
 	checkpath -f \
-	-o ${BITCOIND_USER}:${BITCOIND_GROUP} \
+	-o ${FRENCHD_USER}:${FRENCHD_GROUP} \
 	-m 0660 \
-	${BITCOIND_CONFIGFILE}
+	${FRENCHD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${FRENCHD_CONFIGFILE}" ; then
 		eerror ""
 		eerror "ERROR: You must set a secure rpcpassword to run frenchd."
-		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
+		eerror "The setting must appear in ${FRENCHD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."

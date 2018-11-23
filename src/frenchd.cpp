@@ -81,7 +81,7 @@ bool AppInit(int argc, char* argv[])
             strUsage += "\n" + _("Usage:") + "\n" +
                         "  frenchd [options]                     " + _("Start French Core Daemon") + "\n";
 
-            strUsage += "\n" + HelpMessage(HMM_BITCOIND);
+            strUsage += "\n" + HelpMessage(HMM_FRENCHD);
         }
 
         fprintf(stdout, "%s", strUsage.c_str());

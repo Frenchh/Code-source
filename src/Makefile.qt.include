@@ -102,7 +102,7 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp
 
-BITCOIN_MM = \
+FRENCH_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
@@ -122,7 +122,7 @@ PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
-BITCOIN_QT_H = \
+FRENCH_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
@@ -241,7 +241,7 @@ RES_ICONS = \
   qt/res/icons/unit_tmfrench.png \
   qt/res/icons/unit_tufrench.png
 
-BITCOIN_QT_CPP = \
+FRENCH_QT_CPP = \
   qt/bitcoinaddressvalidator.cpp \
   qt/bitcoinamountfield.cpp \
   qt/bitcoingui.cpp \
@@ -267,7 +267,7 @@ BITCOIN_QT_CPP = \
   qt/winshutdownmonitor.cpp
 
 if ENABLE_WALLET
-BITCOIN_QT_CPP += \
+FRENCH_QT_CPP += \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -321,15 +321,15 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/french-qt-res.rc
+FRENCH_RC = qt/res/french-qt-res.rc
 
-BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+FRENCH_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
 
-qt_libbitcoinqt_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_libbitcoinqt_a_CPPFLAGS = $(FRENCH_INCLUDES) $(FRENCH_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+qt_libbitcoinqt_a_SOURCES = $(FRENCH_QT_CPP) $(FRENCH_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
 
 nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
@@ -349,24 +349,24 @@ $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
 # french-qt binary #
-qt_french_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_french_qt_CPPFLAGS = $(FRENCH_INCLUDES) $(FRENCH_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
 qt_french_qt_SOURCES = qt/french.cpp
 if TARGET_DARWIN
-  qt_french_qt_SOURCES += $(BITCOIN_MM)
+  qt_french_qt_SOURCES += $(FRENCH_MM)
 endif
 if TARGET_WINDOWS
-  qt_french_qt_SOURCES += $(BITCOIN_RC)
+  qt_french_qt_SOURCES += $(FRENCH_RC)
 endif
-qt_french_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_french_qt_LDADD = qt/libbitcoinqt.a $(LIBFRENCH_SERVER)
 if ENABLE_WALLET
-qt_french_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_french_qt_LDADD += $(LIBFRENCH_WALLET)
 endif
 if ENABLE_ZMQ
-qt_french_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_french_qt_LDADD += $(LIBFRENCH_ZMQ) $(ZMQ_LIBS)
 endif
-qt_french_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_french_qt_LDADD += $(LIBFRENCH_CLI) $(LIBFRENCH_COMMON) $(LIBFRENCH_UTIL) $(LIBFRENCH_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_french_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -381,7 +381,7 @@ qt/frenchstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURC
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/frenchstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/frenchstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(FRENCH_QT_CPP) $(FRENCH_QT_H) $(FRENCH_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/french_en.ts
 
@@ -401,7 +401,7 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 CLEANFILES += $(CLEAN_QT)
 
 french_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_french_qt_OBJECTS) qt/french-qt$(EXEEXT) $(LIBBITCOINQT)
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_french_qt_OBJECTS) qt/french-qt$(EXEEXT) $(LIBFRENCHQT)
 
 french_qt : qt/french-qt$(EXEEXT)
 

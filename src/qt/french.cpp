@@ -519,7 +519,7 @@ WId BitcoinApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef BITCOIN_QT_TEST
+#ifndef FRENCH_QT_TEST
 int main(int argc, char* argv[])
 {
     SetupEnvironment();
@@ -699,4 +699,4 @@ int main(int argc, char* argv[])
     }
     return app.getReturnValue();
 }
-#endif // BITCOIN_QT_TEST
+#endif // FRENCH_QT_TEST

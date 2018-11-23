@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_BIP38DIALOG_H
-#define BITCOIN_QT_BIP38DIALOG_H
+#ifndef FRENCH_QT_BIP38DIALOG_H
+#define FRENCH_QT_BIP38DIALOG_H
 
 #include <QDialog>
 
@@ -49,4 +49,4 @@ private slots:
     void on_clearButton_DEC_clicked();
 };
 
-#endif // BITCOIN_QT_BIP38TOOLDIALOG_H
+#endif // FRENCH_QT_BIP38TOOLDIALOG_H

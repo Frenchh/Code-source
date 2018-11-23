@@ -7,8 +7,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MAIN_H
-#define BITCOIN_MAIN_H
+#ifndef FRENCH_MAIN_H
+#define FRENCH_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/french-config.h"
@@ -622,4 +622,4 @@ struct CBlockTemplate {
     std::vector<CAmount> vTxFees;
     std::vector<int64_t> vTxSigOps;
 };
-#endif // BITCOIN_MAIN_H
+#endif // FRENCH_MAIN_H

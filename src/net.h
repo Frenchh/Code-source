@@ -5,8 +5,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NET_H
-#define BITCOIN_NET_H
+#ifndef FRENCH_NET_H
+#define FRENCH_NET_H
 
 #include "bloom.h"
 #include "compat.h"
@@ -759,4 +759,4 @@ public:
 
 void DumpBanlist();
 
-#endif // BITCOIN_NET_H
+#endif // FRENCH_NET_H

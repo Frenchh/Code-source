@@ -1621,23 +1621,30 @@ int64_t GetBlockValue(int nHeight)
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0)
-            return 50000 * COIN;
+            return 10000 * COIN;
     }
 
     if (nHeight == 0) {
         nSubsidy = 0 * COIN; // Genesis block
     } else if (nHeight >= 1 && nHeight <= 400) {
-        nSubsidy = 3750 * COIN; // PoW phase (Premine for swap)
-    } else if (nHeight >= 401 && nHeight <= 10001) {
-        nSubsidy = 1 * COIN; // Phase de lancement
-    } else if (nHeight >= 10002 && nHeight <= 15000) {
-        nSubsidy = 20 * COIN;
-    } else if (nHeight >= 15001 && nHeight <= 25000) {
-        nSubsidy = 10 * COIN;
-    } else if (nHeight >= 25001 && nHeight <= 100000) {
+        nSubsidy = 500 * COIN; // Phase PoW
+    } else if (nHeight >= 401 && nHeight <= 10000) {
+        nSubsidy = 0.5 * COIN; // Phase de lancement
+    } else if (nHeight >= 10001 && nHeight <= 12500) {
         nSubsidy = 5 * COIN;
-    } else if (nHeight >= 100001) {
+    } else if (nHeight >= 12501 && nHeight <= 17500) {
         nSubsidy = 2.5 * COIN;
+    } else if (nHeight >= 17501 && nHeight <= 20000) {
+        nSubsidy = 7.5 * COIN;
+    } else if (nHeight >= 20001 && nHeight <= 25000) {
+        nSubsidy = 3.75 * COIN;
+    } else if (nHeight >= 25001 && nHeight <= 27500) {
+        nSubsidy = 10 * COIN;
+    } else if (nHeight >= 27501 && nHeight <= 32500) {
+        nSubsidy = 5 * COIN;
+    // AFAIRE
+    } else if (nHeight >= 32501) {
+        nSubsidy = 5 * COIN;
     } else {
         nSubsidy = 0 * COIN;
     }
@@ -1662,9 +1669,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     if (nHeight < Params().LAST_POW_BLOCK() || blockValue == 0)
         return 0;
     
-    if (nHeight >= 401 && nHeight <= 5000) {
+    if (nHeight >= 401 && nHeight <= 10001) {
         ret = blockValue * 0.50;
-    } else if (nHeight >= 5001 && nHeight <= 10500) {
+    } else if (nHeight >= 10002 && nHeight <= 15000) {
         ret = blockValue * 0.60;
     } else if (nHeight >= 10501) {
         ret = blockValue * 0.80;

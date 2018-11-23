@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_ECCRYPTOVERIFY_H
-#define BITCOIN_ECCRYPTOVERIFY_H
+#ifndef FRENCH_ECCRYPTOVERIFY_H
+#define FRENCH_ECCRYPTOVERIFY_H
 
 #include <cstdlib>
 #include <vector>
@@ -18,4 +18,4 @@ bool CheckSignatureElement(const unsigned char* vch, int len, bool half);
 
 } // eccrypto namespace
 
-#endif // BITCOIN_ECCRYPTOVERIFY_H
+#endif // FRENCH_ECCRYPTOVERIFY_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_OPTIONSDIALOG_H
-#define BITCOIN_QT_OPTIONSDIALOG_H
+#ifndef FRENCH_QT_OPTIONSDIALOG_H
+#define FRENCH_QT_OPTIONSDIALOG_H
 
 #include <QDialog>
 
@@ -59,4 +59,4 @@ private:
     bool fProxyIpValid;
 };
 
-#endif // BITCOIN_QT_OPTIONSDIALOG_H
+#endif // FRENCH_QT_OPTIONSDIALOG_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_TRANSACTIONVIEW_H
-#define BITCOIN_QT_TRANSACTIONVIEW_H
+#ifndef FRENCH_QT_TRANSACTIONVIEW_H
+#define FRENCH_QT_TRANSACTIONVIEW_H
 
 #include "guiutil.h"
 
@@ -114,4 +114,4 @@ public slots:
     void computeSum();
 };
 
-#endif // BITCOIN_QT_TRANSACTIONVIEW_H
+#endif // FRENCH_QT_TRANSACTIONVIEW_H

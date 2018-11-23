@@ -848,16 +848,22 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     //get block value and calculate from that
     CAmount nSubsidy = 0;
 
-    if (nHeight >= 401 && nHeight <= 10001)
-        nSubsidy = 1.5 * COIN;
-    else if (nHeight >= 10002 && nHeight <= 15000)
-        nSubsidy = 21 * COIN;
-    else if (nHeight >= 15001 && nHeight <= 25000)
+    if (nHeight >= 401 && nHeight <= 10000)
+        nSubsidy = 1 * COIN;
+    else if (nHeight >= 10001 && nHeight <= 12501)
+        nSubsidy = 5.25 * COIN;
+    else if (nHeight >= 12501 && nHeight <= 17500)
+        nSubsidy = 2.62 * COIN;
+    else if (nHeight >= 17501 && nHeight <= 20000)
+        nSubsidy = 7.75 * COIN;
+    else if (nHeight >= 20001 && nHeight <= 25000)
+        nSubsidy = 4 * COIN;
+    else if (nHeight >= 25001 && nHeight <= 27500)
         nSubsidy = 10.5 * COIN;
-    else if (nHeight >= 25001 && nHeight <= 100000)
+    else if (nHeight >= 27501 && nHeight <= 32500)
         nSubsidy = 5.25 * COIN;
     else
-        nSubsidy = 2.62 * COIN;
+        nSubsidy = 5.25 * COIN;
 
     // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
     return ((nSubsidy / 100) * 10) * 1440 * 30;

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_RPCSERVER_H
-#define BITCOIN_RPCSERVER_H
+#ifndef FRENCH_RPCSERVER_H
+#define FRENCH_RPCSERVER_H
 
 #include "amount.h"
 #include "rpcprotocol.h"
@@ -287,4 +287,4 @@ extern bool HTTPReq_REST(AcceptedConnection* conn,
     std::map<std::string, std::string>& mapHeaders,
     bool fRun);
 
-#endif // BITCOIN_RPCSERVER_H
+#endif // FRENCH_RPCSERVER_H

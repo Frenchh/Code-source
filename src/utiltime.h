@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTILTIME_H
-#define BITCOIN_UTILTIME_H
+#ifndef FRENCH_UTILTIME_H
+#define FRENCH_UTILTIME_H
 
 #include <stdint.h>
 #include <string>
@@ -19,4 +19,4 @@ void MilliSleep(int64_t n);
 std::string DateTimeStrFormat(const char* pszFormat, int64_t nTime);
 std::string DurationToDHMS(int64_t nDurationTime);
 
-#endif // BITCOIN_UTILTIME_H
+#endif // FRENCH_UTILTIME_H

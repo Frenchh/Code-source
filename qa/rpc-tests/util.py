@@ -87,11 +87,11 @@ def initialize_chain(test_dir):
         # Create cache directories, run frenchd:
         for i in range(4):
             datadir=initialize_datadir("cache", i)
-            args = [ os.getenv("BITCOIND", "frenchd"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("FRENCHD", "frenchd"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
             bitcoind_processes[i] = subprocess.Popen(args)
-            subprocess.check_call([ os.getenv("BITCOINCLI", "french-cli"), "-datadir="+datadir,
+            subprocess.check_call([ os.getenv("FRENCHCLI", "french-cli"), "-datadir="+datadir,
                                     "-rpcwait", "getblockcount"], stdout=devnull)
         devnull.close()
         rpcs = []
@@ -166,11 +166,11 @@ def start_node(i, dirname, extra_args=None, rpchost=None):
     Start a frenchd and return RPC connection to it
     """
     datadir = os.path.join(dirname, "node"+str(i))
-    args = [ os.getenv("BITCOIND", "frenchd"), "-datadir="+datadir, "-keypool=1", "-discover=0", "-rest" ]
+    args = [ os.getenv("FRENCHD", "frenchd"), "-datadir="+datadir, "-keypool=1", "-discover=0", "-rest" ]
     if extra_args is not None: args.extend(extra_args)
     bitcoind_processes[i] = subprocess.Popen(args)
     devnull = open("/dev/null", "w+")
-    subprocess.check_call([ os.getenv("BITCOINCLI", "french-cli"), "-datadir="+datadir] +
+    subprocess.check_call([ os.getenv("FRENCHCLI", "french-cli"), "-datadir="+datadir] +
                           _rpchost_to_args(rpchost)  +
                           ["-rpcwait", "getblockcount"], stdout=devnull)
     devnull.close()

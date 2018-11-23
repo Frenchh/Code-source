@@ -3,8 +3,8 @@
 // Copyright (c) 2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_BIGNUM_H
-#define BITCOIN_BIGNUM_H
+#ifndef FRENCH_BIGNUM_H
+#define FRENCH_BIGNUM_H
 
 #include <stdexcept>
 #include <vector>

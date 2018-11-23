@@ -51,8 +51,8 @@
 using namespace boost;
 using namespace std;
 
-const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("french:");
+const int FRENCH_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString FRENCH_IPC_PREFIX("french:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
@@ -197,7 +197,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // french: URI
+        if (arg.startsWith(FRENCH_IPC_PREFIX, Qt::CaseInsensitive)) // french: URI
         {
             savedPaymentRequests.append(arg);
 
@@ -243,7 +243,7 @@ bool PaymentServer::ipcSendCommandLine()
     foreach (const QString& r, savedPaymentRequests) {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(BITCOIN_IPC_CONNECT_TIMEOUT)) {
+        if (!socket->waitForConnected(FRENCH_IPC_CONNECT_TIMEOUT)) {
             delete socket;
             socket = NULL;
             return false;
@@ -257,7 +257,7 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(BITCOIN_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(FRENCH_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
@@ -372,7 +372,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // french: URI
+    if (s.startsWith(FRENCH_IPC_PREFIX, Qt::CaseInsensitive)) // french: URI
     {
 #if QT_VERSION < 0x050000
         QUrl uri(s);

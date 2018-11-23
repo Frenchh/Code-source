@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_WALLETVIEW_H
-#define BITCOIN_QT_WALLETVIEW_H
+#ifndef FRENCH_QT_WALLETVIEW_H
+#define FRENCH_QT_WALLETVIEW_H
 
 #include "amount.h"
 #include "masternodelist.h"
@@ -139,4 +139,4 @@ signals:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address);
 };
 
-#endif // BITCOIN_QT_WALLETVIEW_H
+#endif // FRENCH_QT_WALLETVIEW_H

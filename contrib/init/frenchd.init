@@ -19,14 +19,14 @@ fi
 RETVAL=0
 
 prog=frenchd
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/frenchd
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/frenchd}
+# you can override the lockfile via FRENCHD_LOCKFILE in /etc/sysconfig/frenchd
+lockfile=${FRENCHD_LOCKFILE-/var/lock/subsys/frenchd}
 
-# frenchd defaults to /usr/bin/frenchd, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/frenchd}
+# frenchd defaults to /usr/bin/frenchd, override with FRENCHD_BIN
+bitcoind=${FRENCHD_BIN-/usr/bin/frenchd}
 
-# frenchd opts default to -disablewallet, override with BITCOIND_OPTS
-bitcoind_opts=${BITCOIND_OPTS}
+# frenchd opts default to -disablewallet, override with FRENCHD_OPTS
+bitcoind_opts=${FRENCHD_OPTS}
 
 start() {
     echo -n $"Starting $prog: "

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_VERSION_H
-#define BITCOIN_VERSION_H
+#ifndef FRENCH_VERSION_H
+#define FRENCH_VERSION_H
 
 /**
  * network protocol versioning
@@ -37,4 +37,4 @@ static const int MEMPOOL_GD_VERSION = 60002;
 static const int NO_BLOOM_VERSION = 70005;
 
 
-#endif // BITCOIN_VERSION_H
+#endif // FRENCH_VERSION_H

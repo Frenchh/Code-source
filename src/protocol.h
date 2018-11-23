@@ -7,8 +7,8 @@
 #error This header can only be compiled as C++.
 #endif
 
-#ifndef BITCOIN_PROTOCOL_H
-#define BITCOIN_PROTOCOL_H
+#ifndef FRENCH_PROTOCOL_H
+#define FRENCH_PROTOCOL_H
 
 #include "netbase.h"
 #include "serialize.h"
@@ -172,4 +172,4 @@ enum {
     MSG_MASTERNODE_PING
 };
 
-#endif // BITCOIN_PROTOCOL_H
+#endif // FRENCH_PROTOCOL_H

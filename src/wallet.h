@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_H
-#define BITCOIN_WALLET_H
+#ifndef FRENCH_WALLET_H
+#define FRENCH_WALLET_H
 
 #include "amount.h"
 #include "base58.h"
@@ -1195,4 +1195,4 @@ private:
     std::vector<char> _ssExtra;
 };
 
-#endif // BITCOIN_WALLET_H
+#endif // FRENCH_WALLET_H

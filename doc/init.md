@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy frenchd.init to /etc/init.d/frenchd. Test by running "service frenchd start".
 
 Using this script, you can adjust the path and flags to the frenchd program by
-setting the BITCOINGREEND and FLAGS environment variables in the file
+setting the FRENCHGREEND and FLAGS environment variables in the file
 /etc/sysconfig/frenchd. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn

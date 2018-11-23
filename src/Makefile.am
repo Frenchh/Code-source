@@ -25,20 +25,20 @@ $(LIBLEVELDB) $(LIBMEMENV):
           OPT="$(CXXFLAGS) $(CPPFLAGS)"
 endif
 
-BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
-BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+FRENCH_CONFIG_INCLUDES=-I$(builddir)/config
+FRENCH_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
-BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+FRENCH_INCLUDES += -I$(srcdir)/secp256k1/include
+FRENCH_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBBITCOIN_SERVER=libbitcoin_server.a
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
-LIBBITCOIN_COMMON=libbitcoin_common.a
-LIBBITCOIN_CLI=libbitcoin_cli.a
-LIBBITCOIN_UTIL=libbitcoin_util.a
-LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
-LIBBITCOIN_UNIVALUE=univalue/libbitcoin_univalue.a
-LIBBITCOINQT=qt/libbitcoinqt.a
+LIBFRENCH_SERVER=libbitcoin_server.a
+LIBFRENCH_WALLET=libbitcoin_wallet.a
+LIBFRENCH_COMMON=libbitcoin_common.a
+LIBFRENCH_CLI=libbitcoin_cli.a
+LIBFRENCH_UTIL=libbitcoin_util.a
+LIBFRENCH_CRYPTO=crypto/libbitcoin_crypto.a
+LIBFRENCH_UNIVALUE=univalue/libbitcoin_univalue.a
+LIBFRENCHQT=qt/libbitcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -53,7 +53,7 @@ EXTRA_LIBRARIES = \
   libbitcoin_server.a \
   libbitcoin_cli.a
 if ENABLE_WALLET
-BITCOIN_INCLUDES += $(BDB_CPPFLAGS)
+FRENCH_INCLUDES += $(BDB_CPPFLAGS)
 EXTRA_LIBRARIES += libbitcoin_wallet.a
 endif
 
@@ -61,27 +61,27 @@ if ENABLE_ZMQ
 EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
-if BUILD_BITCOIN_LIBS
+if BUILD_FRENCH_LIBS
 lib_LTLIBRARIES = libbitcoinconsensus.la
-LIBBITCOIN_CONSENSUS=libbitcoinconsensus.la
+LIBFRENCH_CONSENSUS=libbitcoinconsensus.la
 else
-LIBBITCOIN_CONSENSUS=
+LIBFRENCH_CONSENSUS=
 endif
 
 bin_PROGRAMS =
 TESTS =
 
-if BUILD_BITCOIND
+if BUILD_FRENCHD
   bin_PROGRAMS += frenchd
 endif
 
-if BUILD_BITCOIN_UTILS
+if BUILD_FRENCH_UTILS
   bin_PROGRAMS += french-cli french-tx
 endif
 
 .PHONY: FORCE
 # french core #
-BITCOIN_CORE_H = \
+FRENCH_CORE_H = \
   bignum.h \
   activemasternode.h \
   addrman.h \
@@ -184,7 +184,7 @@ obj/build.h: FORCE
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between frenchd and french-qt
-libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libbitcoin_server_a_CPPFLAGS = $(FRENCH_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
   alert.cpp \
@@ -215,12 +215,12 @@ libbitcoin_server_a_SOURCES = \
   txdb.cpp \
   txmempool.cpp \
   validationinterface.cpp \
-  $(BITCOIN_CORE_H)
+  $(FRENCH_CORE_H)
 
 if ENABLE_ZMQ
-LIBBITCOIN_ZMQ=libbitcoin_zmq.a
+LIBFRENCH_ZMQ=libbitcoin_zmq.a
 
-libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
+libbitcoin_zmq_a_CPPFLAGS = $(FRENCH_INCLUDES) $(ZMQ_CFLAGS)
 libbitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -232,7 +232,7 @@ endif
 # when wallet enabled
 
 libbitcoin_wallet_a_CFLAGS = -fPIC
-libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libbitcoin_wallet_a_CPPFLAGS = $(FRENCH_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
   activemasternode.cpp \
   bip38.cpp \
@@ -252,11 +252,11 @@ libbitcoin_wallet_a_SOURCES = \
   wallet.cpp \
   wallet_ismine.cpp \
   walletdb.cpp \
-  $(BITCOIN_CORE_H)
+  $(FRENCH_CORE_H)
 
 # crypto primitives library
 crypto_libbitcoin_crypto_a_CFLAGS = -fPIC
-crypto_libbitcoin_crypto_a_CPPFLAGS = $(BITCOIN_CONFIG_INCLUDES)
+crypto_libbitcoin_crypto_a_CPPFLAGS = $(FRENCH_CONFIG_INCLUDES)
 crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha1.cpp \
   crypto/sha256.cpp \
@@ -291,7 +291,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_types.h
 
 # common: shared between frenchd, and french-qt and non-server tools
-libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libbitcoin_common_a_CPPFLAGS = $(FRENCH_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   allocators.cpp \
   amount.cpp \
@@ -320,12 +320,12 @@ libbitcoin_common_a_SOURCES = \
   script/script_error.cpp \
   spork.cpp \
   sporkdb.cpp \
-  $(BITCOIN_CORE_H)
+  $(FRENCH_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libbitcoin_util_a_CPPFLAGS = $(FRENCH_INCLUDES)
 libbitcoin_util_a_SOURCES = \
   allocators.cpp \
   compat/strnlen.cpp \
@@ -341,7 +341,7 @@ libbitcoin_util_a_SOURCES = \
   utilstrencodings.cpp \
   utilmoneystr.cpp \
   utiltime.cpp \
-  $(BITCOIN_CORE_H)
+  $(FRENCH_CORE_H)
 
 if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
@@ -349,27 +349,27 @@ libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
 # cli: shared between french-cli and french-qt
-libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libbitcoin_cli_a_CPPFLAGS = $(FRENCH_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
-  $(BITCOIN_CORE_H)
+  $(FRENCH_CORE_H)
 
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
 frenchd_LDADD = \
-  $(LIBBITCOIN_SERVER) \
-  $(LIBBITCOIN_COMMON) \
+  $(LIBFRENCH_SERVER) \
+  $(LIBFRENCH_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBFRENCH_UTIL) \
+  $(LIBFRENCH_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-frenchd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+frenchd_LDADD += $(LIBFRENCH_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
@@ -383,15 +383,15 @@ frenchd_SOURCES += frenchd-res.rc
 endif
 
 frenchd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-frenchd_CPPFLAGS = $(BITCOIN_INCLUDES)
+frenchd_CPPFLAGS = $(FRENCH_INCLUDES)
 frenchd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
 # french-cli binary #
 french_cli_LDADD = \
-  $(LIBBITCOIN_CLI) \
+  $(LIBFRENCH_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_UTIL) \
+  $(LIBFRENCH_UTIL) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
   $(CRYPTO_LIBS) \
@@ -400,21 +400,21 @@ french_cli_LDADD = \
 french_cli_SOURCES = \
   french-cli.cpp
 
-french_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+french_cli_CPPFLAGS = $(FRENCH_INCLUDES) $(EVENT_CFLAGS)
 #
 
 # french-tx binary #
 french_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBBITCOIN_COMMON) \
-  $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_CRYPTO) \
+  $(LIBFRENCH_COMMON) \
+  $(LIBFRENCH_UTIL) \
+  $(LIBFRENCH_CRYPTO) \
   $(LIBSECP256K1) \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
 french_tx_SOURCES = french-tx.cpp
-french_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+french_tx_CPPFLAGS = $(FRENCH_INCLUDES)
 #
 french_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -423,7 +423,7 @@ french_cli_SOURCES += french-cli-res.rc
 endif
 french_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-if BUILD_BITCOIN_LIBS
+if BUILD_FRENCH_LIBS
 include_HEADERS = script/bitcoinconsensus.h
 libbitcoinconsensus_la_SOURCES = \
   allocators.cpp \
@@ -451,7 +451,7 @@ endif
 
 libbitcoinconsensus_la_LDFLAGS = -no-undefined $(RELDFLAGS)
 libbitcoinconsensus_la_LIBADD = $(CRYPTO_LIBS) $(BOOST_LIBS)
-libbitcoinconsensus_la_CPPFLAGS = $(CRYPTO_CFLAGS) -I$(builddir)/obj -DBUILD_BITCOIN_INTERNAL
+libbitcoinconsensus_la_CPPFLAGS = $(CRYPTO_CFLAGS) -I$(builddir)/obj -DBUILD_FRENCH_INTERNAL
 if USE_LIBSECP256K1
 libbitcoinconsensus_la_LIBADD += secp256k1/libsecp256k1.la
 endif
