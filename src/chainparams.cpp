@@ -55,11 +55,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000ee1d29715a7ccf1ce7c17791037d73c495a4ee0b4feb0d4d01d96ccacbd"));
+    (0, uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1542915000, // * UNIX timestamp of last checkpoint block
+    1542915010, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
@@ -67,7 +67,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-    (0, uint256("0x00000e9fcdf9ea33163b275795f0c9d8da4b5f57174bbb7d54ad0172c49aa35f"));
+    (0, uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
@@ -77,12 +77,12 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of
-    (0, uint256("0x1cf96a6c48a9020dfb8fa03d32bfe58d6927e2268bdf87982be66ba589108f44"));
+    (0, uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 static const Checkpoints::CCheckpointData dataRegtest = {
-    &mapCheckpointsRegtest,
-    1527379220,
+    &mapCheckpointsRegtest	,
     0,
-    100};
+    0,
+    0};
 
 class CMainParams : public CChainParams
 {
@@ -131,13 +131,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1542915000;
+        genesis.nTime = 1542915010;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 492305;
+        genesis.nNonce = 1034614;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000ee1d29715a7ccf1ce7c17791037d73c495a4ee0b4feb0d4d01d96ccacbd"));
-        assert(genesis.hashMerkleRoot == uint256("0xe06f482a85715d9aa33772b30b19cb0464cfee333b01fbd9c219ef1c9af12860"));
+        assert(hashGenesisBlock == uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
+        assert(genesis.hashMerkleRoot == uint256("0xb38a6e6abadd6a371f35c5fee38ff216d5b9e2fbf82683e48c01e1732b79ccb1"));
 
         // DNS Seedins
         
@@ -171,7 +171,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "049611433516f3d1e2c1e401f0d1a1d6a95c15a53cb1afc9f984c044835ddad420bbf0993217dec44c452387a28fd57c97c57b46b4c3b8ca4bdcf5f35de878a98b";
-        strMasternodePoolDummyAddress = "";
+        strMasternodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
@@ -214,10 +214,10 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1542915010;
-        genesis.nNonce = 26976;
+        genesis.nNonce = 1034614;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000e9fcdf9ea33163b275795f0c9d8da4b5f57174bbb7d54ad0172c49aa35f"));
+        assert(hashGenesisBlock == uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -246,7 +246,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "0491fe8bb8da0d1a488cd14ce69d3b2b73552defd42fe2eca0704d5d00099f1793cbf46eb186ec714c7e964d9b8826d354345467d17e2fe814afaa50978a19ba40";
-        strMasternodePoolDummyAddress = "";
+        strMasternodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
@@ -281,13 +281,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // French: 1 day
         nTargetSpacing = 2 * 60;        // French: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1527379220;
-        genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nTime = 1542915010;
+        genesis.nBits = 0x1e0ffff0;
+        genesis.nNonce = 1034614;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 218821;
-        assert(hashGenesisBlock == uint256("0x1cf96a6c48a9020dfb8fa03d32bfe58d6927e2268bdf87982be66ba589108f44"));
+        assert(hashGenesisBlock == uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.

@@ -1628,9 +1628,9 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 0 * COIN; // Genesis block
     } else if (nHeight >= 1 && nHeight <= 400) {
         nSubsidy = 3750 * COIN; // PoW phase (Premine for swap)
-    } else if (nHeight >= 401 && nHeight <= 5000) {
-        nSubsidy = 1 * COIN; // Launch phase
-    } else if (nHeight >= 5001 && nHeight <= 15000) {
+    } else if (nHeight >= 401 && nHeight <= 10001) {
+        nSubsidy = 1 * COIN; // Phase de lancement
+    } else if (nHeight >= 10002 && nHeight <= 15000) {
         nSubsidy = 20 * COIN;
     } else if (nHeight >= 15001 && nHeight <= 25000) {
         nSubsidy = 10 * COIN;
