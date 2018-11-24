@@ -1046,7 +1046,7 @@ Veuillez vérifier l'adresse et réessayer.</translation>
     </message>
     </context>
 <context>
-    <name>OverviewPage</name>
+    <name>Tableau de bord</name>
     </context>
 <context>
     <name>PaymentServer</name>
