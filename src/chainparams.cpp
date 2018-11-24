@@ -101,7 +101,7 @@ public:
         pchMessageStart[2] = 0x72;
         pchMessageStart[3] = 0x4e;
         vAlertPubKey = ParseHex("0495ac4315e4543b2f75eba423b06614ea277cebbbf609bcb421d29f1df9747c6ff4443513f98b2fbceca286456f95c2a9b1a5ee61cb8e37db415d358f35ace64d");
-        nDefaultPort = 18821;
+        nDefaultPort = 1062;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
         nMaxReorganizationDepth = 100;
@@ -142,7 +142,9 @@ public:
         // DNS Seedins
         
         vSeeds.clear();
-        // vSeeds.push_back(CDNSSeedData("french.cc", "newseed.french.cc"));
+        // vSeeds.push_back(CDNSSeedData("french-blockchain.com", "seed1.french-blockchain.com"));
+        // vSeeds.push_back(CDNSSeedData("seed2.french-blockchain.com", "seed3.french-blockchain.com"));
+
 
         // French addresses start with 'F'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 35);
@@ -154,7 +156,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         // French BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // French BIP44 coin type is '18821'
+        // French BIP44 coin type is '1062'
         //  BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x49)(0x85).convert_to_container<std::vector<unsigned char> >();
 
@@ -174,7 +176,7 @@ public:
         strFrenchnodePoolDummyAddress = "FNWpMb7wr4gonyJbtArMofVVTHNg4JQQUL";
         nStartFrenchnodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
-        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        nBudget_Fee_Confirmations = 7; // Number of confirmations for the finalization fee
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -199,7 +201,7 @@ public:
         pchMessageStart[2] = 0x32;
         pchMessageStart[3] = 0x67;
         vAlertPubKey = ParseHex("047f16d34e65c98ff46c4eb76512251d9dba749f66cbb5cda976e340ace50a5bf5eac1dd6bc46a19761144493e27363e77afc937eda4933f9cda3778b5b5296b0e");
-        nDefaultPort = 18823;
+        nDefaultPort = 1063;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
@@ -286,7 +288,7 @@ public:
         genesis.nNonce = 1034614;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 218821;
+        nDefaultPort = 1064;
         assert(hashGenesisBlock == uint256("0x000008287777085f2004feb7c008b38237ce2806ae5d795a34e779807b34dc2f"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.

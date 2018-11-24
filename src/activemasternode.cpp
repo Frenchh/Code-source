@@ -73,13 +73,13 @@ void CActiveFrenchnode::ManageStatus()
         }
 
         // if (Params().NetworkID() == CBaseChainParams::MAIN) {
-        //     if (service.GetPort() != 18821) {
-        //         notCapableReason = strprintf("Invalid port: %u - only 18821 is supported on mainnet.", service.GetPort());
+        //     if (service.GetPort() != 1062) {
+        //         notCapableReason = strprintf("Invalid port: %u - only 1062 is supported on mainnet.", service.GetPort());
         //         LogPrintf("CActiveFrenchnode::ManageStatus() - not capable: %s\n", notCapableReason);
         //         return;
         //     }
-        // } else if (service.GetPort() == 18821) {
-        //     notCapableReason = strprintf("Invalid port: %u - 18821 is only supported on mainnet.", service.GetPort());
+        // } else if (service.GetPort() == 1062) {
+        //     notCapableReason = strprintf("Invalid port: %u - 1062 is only supported on mainnet.", service.GetPort());
         //     LogPrintf("CActiveFrenchnode::ManageStatus() - not capable: %s\n", notCapableReason);
         //     return;
         // }
@@ -240,13 +240,13 @@ bool CActiveFrenchnode::Register(std::string strService, std::string strKeyFrenc
 
     // CService service = CService(strService);
     // if (Params().NetworkID() == CBaseChainParams::MAIN) {
-    //     if (service.GetPort() != 18821) {
-    //         errorMessage = strprintf("Invalid port %u for masternode %s - only 18821 is supported on mainnet.", service.GetPort(), strService);
+    //     if (service.GetPort() != 1062) {
+    //         errorMessage = strprintf("Invalid port %u for masternode %s - only 1062 is supported on mainnet.", service.GetPort(), strService);
     //         LogPrintf("CActiveFrenchnode::Register() - %s\n", errorMessage);
     //         return false;
     //     }
-    // } else if (service.GetPort() == 18821) {
-    //     errorMessage = strprintf("Invalid port %u for masternode %s - 18821 is only supported on mainnet.", service.GetPort(), strService);
+    // } else if (service.GetPort() == 1062) {
+    //     errorMessage = strprintf("Invalid port %u for masternode %s - 1062 is only supported on mainnet.", service.GetPort(), strService);
     //     LogPrintf("CActiveFrenchnode::Register() - %s\n", errorMessage);
     //     return false;
     // }

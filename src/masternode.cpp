@@ -520,8 +520,8 @@ bool CFrenchnodeBroadcast::CheckAndUpdate(int& nDos)
     }
 
     // if (Params().NetworkID() == CBaseChainParams::MAIN) {
-    //     if (addr.GetPort() != 18821) return false;
-    // } else if (addr.GetPort() == 18821)
+    //     if (addr.GetPort() != 1062) return false;
+    // } else if (addr.GetPort() == 1062)
     //     return false;
 
     //search existing Frenchnode list, this is where we update existing Frenchnodes with new mnb broadcasts

@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("french-core", ""
 QT_TRANSLATE_NOOP("french-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("french-core", "(18821 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("french-core", "(1062 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("french-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("french-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("french-core", "(must be 18821 for mainnet)"),
+QT_TRANSLATE_NOOP("french-core", "(must be 1062 for mainnet)"),
 QT_TRANSLATE_NOOP("french-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("french-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("french-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
